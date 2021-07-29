@@ -37,9 +37,7 @@
       </p>
       <p class="html-code hide-mobile">
         <span class="hover-before">&lt;<span class="html-element">p</span>&gt;</span>
-          <span class="js-inject-trailing-space">
-            <%= htmlWebpackPlugin.options.meta.description %>
-          </span>
+          <span class="js-inject-trailing-space"><%= htmlWebpackPlugin.options.meta.description %></span>
         <span class="hover-after">&lt;/<span class="html-element">p</span>&gt;</span>
       </p>
     </section>
@@ -50,16 +48,16 @@
       <ul>
         <% footerLinks.forEach(function(item) { %>
           <li>
-            <a class="link" href="<%= item.href %>" rel="noopener noreferrer" target="<%= item.target %>">
+            <a class="footer-link" href="<%= item.href %>" rel="noopener noreferrer" target="<%= item.target %>">
               <%= item.label %>
             </a>
           </li>
         <% }); %>
         <li class="hide-desk">
-          <a class="mobile-cta js-inject-trailing-space link" rel="noopener noreferrer" target="_blank" href="<%= telefoneLink %>"><%= telefone %></a>
+          <a class="mobile-cta js-inject-trailing-space footer-link" rel="noopener noreferrer" target="_blank" href="<%= telefoneLink %>"><%= telefone %></a>
         </li>
         <li class="hide-desk">
-          <a class="mobile-cta js-inject-trailing-space link" rel="noopener noreferrer" target="_blank" href="mailto:<%= email %>"><%= email %></a>
+          <a class="mobile-cta js-inject-trailing-space footer-link" rel="noopener noreferrer" target="_blank" href="mailto:<%= email %>"><%= email %></a>
         </li>
       </ul>
     </footer>

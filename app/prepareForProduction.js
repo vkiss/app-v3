@@ -66,6 +66,8 @@ fs.readFile( indexFile, "utf8", function ( err, data ) {
   }
 
   const aditionalClassesAndIds = [
+    ".js-inject-trailing-space",
+    ".footer-link",
     "#email-link-desktop",
     "#phone-link-desktop",
     ".context-menu-secondary-item",

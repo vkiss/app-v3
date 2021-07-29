@@ -83,14 +83,14 @@ export function randomizeColorPalette ( randomPalette ) {
       color: ${differLinkColor};
     }
 
-    a.link:focus,
-    a.link:hover {
+    a.footer-link:focus,
+    a.footer-link:hover {
       border-bottom-color: ${differLinkColor};
       background-color: ${differLinkColor};
       color: ${randomPalette.colors[6]};
     }
 
-    .--context-menu-open$a.link:hover:not(:focus) {
+    .--context-menu-open$a.footer-link:hover:not(:focus) {
       border-bottom-color: inherit;
       background-color: inherit;
       color: ${differLinkColor};
