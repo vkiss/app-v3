@@ -85,7 +85,7 @@ module.exports = {
         collapseWhitespace: true
       },
     } ),
-    // new HtmlWebpackInlineSourcePlugin( HtmlWebpackPlugin ),
+    new HtmlWebpackInlineSourcePlugin( HtmlWebpackPlugin ),
     new CleanWebpackPlugin(),
     new webpack.DefinePlugin( {
       VERSION: JSON.stringify( require( "./package.json" ).version ),
