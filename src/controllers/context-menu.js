@@ -18,6 +18,7 @@ import chromeLogo from "../assets/logos/chrome.svg";
 import parajegas from "../assets/logos/parajegas.svg";
 import sophialis from "../assets/logos/sophialis.svg";
 import greensign from "../assets/logos/greensign.svg";
+import movelsoft from "../assets/logos/movelsoft.svg";
 
 // assets: icons
 import emailIcon from "../assets/icons/email.svg";
@@ -84,6 +85,12 @@ const contextMenuItens = [
         "icon": linkBlank,
         "label": "akhim.com.br",
         "link": "https://www.akhim.com.br/"
+      },
+      {
+        "icon": movelsoft,
+        "icon_adjust": 4,
+        "label": "movelsoft.com.br",
+        "link": "https://www.movelsoft.com.br/"
       },
     ]
   },
