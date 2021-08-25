@@ -1,5 +1,0 @@
-{
-  "name": "themeName",
-  "link": "themeURL",
-  "colors": [ "brackets", "html_element", "html_attribute", "html_equalsign", "html_value", "html_comment", "site_bg", "plain_text" ]
-}

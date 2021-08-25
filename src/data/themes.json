@@ -43,5 +43,10 @@
     "name": "firefox theme",
     "link": "https://github.com/firefox-theme/visual-studio-code",
     "colors": [ "#767578", "#5EBFFF", "#F570EF", "#D7D7DB", "#C289FF", ["#939393", "#52A654"], "#2A2A2E", "#B1B1B3" ]
+  },
+  {
+    "name": "firefly pro",
+    "link": "https://github.com/ankitmlive/firefly-theme",
+    "colors": [ "#216680", "#43BDE9", "#F68600", "#B3B3B3", "#9DBF00", "#5F6973", "#080F18", "#B8C5DC" ]
   }
 ]
