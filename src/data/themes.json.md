@@ -1,4 +1,4 @@
-## Model
+# Modelo
 
 ```json
 {
@@ -8,9 +8,20 @@
 }
 ```
 
-### html_comment
+## html_value
+Pode receber um objeto, sendo o segund valor para diferenciar a cor das aspas.
+Exemplo (night owl):
+```json
+{
+  "name": "night owl",
+  "link": "https://github.com/sdras/night-owl-vscode-theme",
+  "colors": [ "#5BDEC9", "#C1EDE6", "#BCE666", "#5BDEC9", ["#F3C384", "#D2F6DB"], "#5E7877", "#031628", "#D4DEEC" ]
+}
+```
 
-Pode receber um objeto para diferenciar a color do texto do comentário.
+## html_comment
+
+Pode receber um objeto, sendo o segund valor para diferenciar a cor do texto do comentário.
 Exemplo (firefox theme):
 ```json
 {

@@ -9,11 +9,25 @@ const hexToRgb = ( hex ) => {
   } : null;
 };
 
+const organizeDOM = () => {
+  /** Envolver aspas em <span> e incluir classe para tematizar */
+  const allKeyElements = document.querySelectorAll( ".html-key" );
+
+  for ( const keyElement of allKeyElements ) {
+    const value = keyElement.innerText.replace( /"/g, "" );
+    const aspasSpan = "<span class=\"html-aspas\">\"</span>";
+    keyElement.innerHTML = aspasSpan + value + aspasSpan;
+  }
+};
+
 export function randomizeColorPalette ( randomPalette ) {
+  organizeDOM();
   const filterResult = ( number ) => { return ( number === 3 ? 4 : number ); };
   const differLinkColor = randomPalette.colors[filterResult( randomIntFromInterval( 1, 3 ) )];
   // colors
   const COLOR = {
+    ASPAS: typeof( randomPalette.colors[4] ) === "string" ? randomPalette.colors[4] : randomPalette.colors[4][1],
+    VALUE: typeof( randomPalette.colors[4] ) === "string" ? randomPalette.colors[4] : randomPalette.colors[4][0],
     COMMENT: typeof( randomPalette.colors[5] ) === "string" ? randomPalette.colors[5] : randomPalette.colors[5][1],
     COMMENT_OPENCLOSE: typeof( randomPalette.colors[5] ) === "string" ? randomPalette.colors[5] : randomPalette.colors[5][0],
   };
@@ -47,7 +61,11 @@ export function randomizeColorPalette ( randomPalette ) {
   }
 
   .html-key {
-    color: ${randomPalette.colors[4]};
+    color: ${COLOR.VALUE};
+  }
+
+  .html-aspas {
+    color: ${COLOR.ASPAS};
   }
 
   .html-comment {

@@ -48,5 +48,10 @@
     "name": "firefly pro",
     "link": "https://github.com/ankitmlive/firefly-theme",
     "colors": [ "#216680", "#43BDE9", "#F68600", "#B3B3B3", "#9DBF00", "#5F6973", "#080F18", "#B8C5DC" ]
+  },
+  {
+    "name": "night owl",
+    "link": "https://github.com/sdras/night-owl-vscode-theme",
+    "colors": [ "#5BDEC9", "#C1EDE6", "#BCE666", "#5BDEC9", ["#F3C384", "#D2F6DB"], "#5E7877", "#031628", "#D4DEEC" ]
   }
 ]
