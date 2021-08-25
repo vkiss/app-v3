@@ -12,6 +12,11 @@ const hexToRgb = ( hex ) => {
 export function randomizeColorPalette ( randomPalette ) {
   const filterResult = ( number ) => { return ( number === 3 ? 4 : number ); };
   const differLinkColor = randomPalette.colors[filterResult( randomIntFromInterval( 1, 3 ) )];
+  // colors
+  const COLOR = {
+    COMMENT: typeof( randomPalette.colors[5] ) === "string" ? randomPalette.colors[5] : randomPalette.colors[5][1],
+    COMMENT_OPENCLOSE: typeof( randomPalette.colors[5] ) === "string" ? randomPalette.colors[5] : randomPalette.colors[5][0],
+  };
 
   addStyle( `
   html,
@@ -48,7 +53,11 @@ export function randomizeColorPalette ( randomPalette ) {
   .html-comment {
     font-style: italic;
     user-select: none;
-    color: ${randomPalette.colors[5]};
+    color: ${COLOR.COMMENT};
+  }
+
+  .html-comment$span {
+    color: ${COLOR.COMMENT_OPENCLOSE};
   }
 
   .promo-box-ad {
@@ -64,6 +73,18 @@ export function randomizeColorPalette ( randomPalette ) {
     fill: ${randomPalette.colors[7]};
   }
 
+  #footer-notes,
+  #footer-notes$a {
+    color: ${COLOR.COMMENT_OPENCLOSE}
+  }
+
+  #footer-notes$a:focus,
+  #footer-notes$a:hover {
+    color: ${randomPalette.colors[6]};
+    border-bottom-color: ${COLOR.COMMENT_OPENCLOSE};
+    background-color: ${COLOR.COMMENT_OPENCLOSE};
+  }
+
   @media$screen$and$(max-width:$899px) {
     a {
       color: ${randomPalette.colors[7]};
@@ -75,10 +96,6 @@ export function randomizeColorPalette ( randomPalette ) {
   }
 
   @media$screen$and$(min-width:$900px) {
-    aside {
-      color: ${randomPalette.colors[5]};
-    }
-
     a {
       color: ${differLinkColor};
     }
@@ -109,17 +126,6 @@ export function randomizeColorPalette ( randomPalette ) {
       background-color: inherit;
     }
 
-    aside$a {
-      color: ${randomPalette.colors[5]}
-    }
-
-    aside$a:focus,
-    aside$a:hover {
-      color: ${randomPalette.colors[6]};
-      border-bottom-color: ${randomPalette.colors[5]};
-      background-color: ${randomPalette.colors[5]};
-    }
-
     .--context-menu-open$aside$a:hover:not(:focus) {
       color: inherit;
       border-bottom-color: inherit;
@@ -132,9 +138,8 @@ export function randomizeColorPalette ( randomPalette ) {
 export function injectTrailingSpaces () {
   const elementsToInjectTrailingSpace = document.querySelectorAll( ".js-inject-trailing-space" );
 
-  for ( let i = 0; i < elementsToInjectTrailingSpace.length; i++ ) {
-    const that = elementsToInjectTrailingSpace[i];
-    that.innerHTML = convertBlankSpaceToTrailingSpacesElement( that.innerText.replace( "<!--", "&lt;!--" ) );
-    that.classList.remove( "js-inject-trailing-space" );
+  for ( const element of elementsToInjectTrailingSpace ) {
+    element.innerHTML = convertBlankSpaceToTrailingSpacesElement( element.innerText.replace( "<!--", "&lt;!--" ) );
+    element.classList.remove( "js-inject-trailing-space" );
   }
 }

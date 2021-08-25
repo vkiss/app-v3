@@ -1,7 +1,7 @@
 [
   {
     "name": "horizon",
-    "link": "https://marketplace.visualstudio.com/items?itemName=jolaleye.horizon-theme-vscode",
+    "link": "https://github.com/jolaleye/horizon-theme-vscode",
     "colors": [ "#B93B5E", "#E5446F", "#E78376", "#BBBBBB", "#EDA586", "#4C4D54", "#1C1E28", "#BBBBBB"]
   },
   {
@@ -38,5 +38,10 @@
     "name": "mayukai mirage",
     "link": "https://github.com/GulajavaMinistudio/Mayukai-Theme",
     "colors": [ "#AAA8A4", "#F41989", "#F5C64E", "#929595", "#9BCE67", "#596773", "#131926", "#C6CAB7"]
+  },
+  {
+    "name": "firefox theme",
+    "link": "https://github.com/firefox-theme/visual-studio-code",
+    "colors": [ "#767578", "#5EBFFF", "#F570EF", "#D7D7DB", "#C289FF", ["#939393", "#52A654"], "#2A2A2E", "#B1B1B3" ]
   }
 ]
