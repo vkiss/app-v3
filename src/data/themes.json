@@ -7,7 +7,7 @@
   {
     "name": "monokai.pro",
     "link": "https://monokai.pro/",
-    "colors": [ "#939297", "#F45188", "#52DFEA", "#939293", "#FAD84D", "#727072", "#2E2A2F", "#FCFCFA"]
+    "colors": [ "#939297", "#F45188", "#52DFEA", "#939293", ["#FAD84D", "#939293"], "#727072", "#2E2A2F", "#FCFCFA"]
   },
   {
     "name": "one dark pro",
@@ -32,12 +32,12 @@
   {
     "name": "winter is coming",
     "link": "https://github.com/johnpapa/vscode-winteriscoming",
-    "colors": [ "#FEFEFE", "#53BEFF", "#F9EDAE", "#93D6F2", "#97D7A9", "#989999", "#031728", "#94D7F3"]
+    "colors": [ "#FEFEFE", "#53BEFF", "#F9EDAE", "#93D6F2", ["#97D7A9", "#56FF6F"], "#989999", "#031728", "#94D7F3"]
   },
   {
     "name": "mayukai mirage",
     "link": "https://github.com/GulajavaMinistudio/Mayukai-Theme",
-    "colors": [ "#AAA8A4", "#F41989", "#F5C64E", "#929595", "#9BCE67", "#596773", "#131926", "#C6CAB7"]
+    "colors": [ "#AAA8A4", "#F41989", "#F5C64E", "#929595", ["#9BCE67", "#929595"], "#596773", "#131926", "#C6CAB7"]
   },
   {
     "name": "firefox theme",

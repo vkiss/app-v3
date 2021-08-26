@@ -23,7 +23,8 @@ const organizeDOM = () => {
 export function randomizeColorPalette ( randomPalette ) {
   organizeDOM();
   const filterResult = ( number ) => { return ( number === 3 ? 4 : number ); };
-  const differLinkColor = randomPalette.colors[filterResult( randomIntFromInterval( 1, 3 ) )];
+  const randomColor = randomPalette.colors[filterResult( randomIntFromInterval( 1, 3 ) )];
+  const differLinkColor = typeof( randomColor ) === "string" ? randomColor : randomColor[0];
   // colors
   const COLOR = {
     ASPAS: typeof( randomPalette.colors[4] ) === "string" ? randomPalette.colors[4] : randomPalette.colors[4][1],
