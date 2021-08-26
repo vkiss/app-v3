@@ -53,33 +53,6 @@ module.exports = {
     new HtmlWebpackPlugin( {
       inlineSource: "main.bundle.js",
       title: "Vinicius Kiss - Desenvolvedor Frontend",
-      templateParameters: {
-        email: "contato@vkiss.com.br",
-        telefone: "(11) 985 750 139",
-        telefoneLink: "https://wa.me/5511985750139",
-        footerLinks: [
-          {
-            label: "polywork",
-            href: "https://www.polywork.com/vinik",
-            target: "_blank",
-          },
-          {
-            label: "linkedin",
-            href: "https://www.linkedin.com/in/vkiss/",
-            target: "_blank",
-          },
-          {
-            label: "github",
-            href: "https://github.com/vkiss",
-            target: "_blank",
-          }
-        ],
-      },
-      meta: {
-        viewport: "width=device-width,minimum-scale=1",
-        description: "Escrevo códigos que deixam sites bonitos.",
-        robots: "index, follow"
-      },
       minify: {
         removeComments: true,
         collapseWhitespace: true
@@ -90,7 +63,7 @@ module.exports = {
     new webpack.DefinePlugin( {
       VERSION: JSON.stringify( require( "./package.json" ).version ),
       UMBLERREF: JSON.stringify( "https://www.umbler.com/br/seja-bem-vindo?a=7kly6v4e" ),
-      FILEWEIGHT: "65.452"
+      FILEWEIGHT: "65.519"
     } ),
     new CopyPlugin( {
       patterns: [

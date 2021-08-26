@@ -3,6 +3,9 @@
   <head>
     <title>Vinicius Kiss - Desenvolvedor Frontend</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Escrevo códigos que deixam sites bonitos.">
     <link rel="canonical" href="http://vkiss.com.br/">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/hack-font/3.003/web/hack.min.css">
     <link rel="shortcut icon" href="/favicon.png">
@@ -18,26 +21,26 @@
         <span class="hover-after">&lt;/<span class="html-element">h1</span>&gt;</span>
       </h1>
       <p class="hide-mobile">
-        <a id="email-link-desktop" class="html-code" target="_blank" rel="noopener noreferrer" href="mailto:<%= email %>">
-          <span class="hover-before">&lt;<span class="html-element">a</span><span class="html-space"> <span>•</span></span><span class="html-attribute">href</span><span class="html-equal-sign">=</span><span class="html-key">"mailto:<%= email %>"</span>&gt;</span>
+        <a id="email-link-desktop" class="html-code" target="_blank" rel="noopener noreferrer" href="mailto:contato@vkiss.com.br">
+          <span class="hover-before">&lt;<span class="html-element">a</span><span class="html-space"> <span>•</span></span><span class="html-attribute">href</span><span class="html-equal-sign">=</span><span class="html-key">"mailto:contato@vkiss.com.br"</span>&gt;</span>
           <span class="js-inject-trailing-space">
-            <%= email %>
+            contato@vkiss.com.br
           </span>
           <span class="hover-after">&lt;/<span class="html-element">a</span>&gt;</span>
         </a>
       </p>
       <p class="hide-mobile">
-        <a id="phone-link-desktop" class="html-code" target="_blank" rel="noopener noreferrer" href="<%= telefoneLink %>">
-          <span class="hover-before">&lt;<span class="html-element">a</span><span class="html-space"> <span>•</span></span><span class="html-attribute">href</span><span class="html-equal-sign">=</span><span class="html-key">"<%= telefoneLink %>"</span>&gt;</span>
+        <a id="phone-link-desktop" class="html-code" target="_blank" rel="noopener noreferrer" href="https://wa.me/5511985750139">
+          <span class="hover-before">&lt;<span class="html-element">a</span><span class="html-space"> <span>•</span></span><span class="html-attribute">href</span><span class="html-equal-sign">=</span><span class="html-key">"https://wa.me/5511985750139"</span>&gt;</span>
           <span class="js-inject-trailing-space">
-            <%= telefone %>
+            (11) 985 750 139
           </span>
           <span class="hover-after">&lt;/<span class="html-element">a</span>&gt;</span>
         </a>
       </p>
       <p class="html-code hide-mobile">
         <span class="hover-before">&lt;<span class="html-element">p</span>&gt;</span>
-          <span class="js-inject-trailing-space"><%= htmlWebpackPlugin.options.meta.description %></span>
+          <span class="js-inject-trailing-space">Escrevo códigos que deixam sites bonitos.</span>
         <span class="hover-after">&lt;/<span class="html-element">p</span>&gt;</span>
       </p>
     </section>
@@ -46,18 +49,26 @@
 
     <footer>
       <ul>
-        <% footerLinks.forEach(function(item) { %>
-          <li>
-            <a class="footer-link" href="<%= item.href %>" rel="noopener noreferrer" target="<%= item.target %>">
-              <%= item.label %>
-            </a>
-          </li>
-        <% }); %>
-        <li class="hide-desk">
-          <a class="mobile-cta js-inject-trailing-space footer-link" rel="noopener noreferrer" target="_blank" href="<%= telefoneLink %>"><%= telefone %></a>
+        <li>
+          <a class="footer-link" href="https://www.polywork.com/vinik" rel="noopener noreferrer" target="_blank">
+            polywork
+          </a>
+        </li>
+        <li>
+          <a class="footer-link" href="https://www.linkedin.com/in/vkiss/" rel="noopener noreferrer" target="_blank">
+            linkedin
+          </a>
+        </li>
+        <li>
+          <a class="footer-link" href="https://github.com/vkiss" rel="noopener noreferrer" target="_blank">
+            github
+          </a>
         </li>
         <li class="hide-desk">
-          <a class="mobile-cta js-inject-trailing-space footer-link" rel="noopener noreferrer" target="_blank" href="mailto:<%= email %>"><%= email %></a>
+          <a class="mobile-cta js-inject-trailing-space footer-link" rel="noopener noreferrer" target="_blank" href="https://wa.me/5511985750139">(11) 985 750 139</a>
+        </li>
+        <li class="hide-desk">
+          <a class="mobile-cta js-inject-trailing-space footer-link" rel="noopener noreferrer" target="_blank" href="mailto:contato@vkiss.com.br">contato@vkiss.com.br</a>
         </li>
       </ul>
     </footer>
