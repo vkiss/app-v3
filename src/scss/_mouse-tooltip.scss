@@ -2,12 +2,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  max-width: 200px;
+  max-width: fit-content;
   padding: 5px;
   padding: 9px 12px;
   background-color: $c-context-menu-bg;
   box-shadow: $context-menu-shadow;
-  font-size: 10px;
+  font-size: remy(12);
   line-height: 1.5;
   opacity: 0;
   text-transform: lowercase;

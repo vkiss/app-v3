@@ -3,7 +3,7 @@ $promo-box-border: 1px solid rgba(255, 255, 255, .1);
 .promo-box {
   border: $promo-box-border;
   color: #FFF;
-  font-size: 12px;
+  font-size: remy(12);
   text-decoration: none;
 
   @include main-app-element-controller( "transform .2s, box-shadow .2s" );

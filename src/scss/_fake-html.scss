@@ -9,7 +9,7 @@
         position: absolute;
         bottom: 1px;
         display: block;
-        font-size: 14px;
+        font-size: remy(16);
         font-weight: 400;
         pointer-events: none;
         text-transform: none;
@@ -22,12 +22,14 @@
       @extend %hover-before-after;
 
       right: calc(100% + 1px);
+      transform: translate(-2px, 0);
     }
 
     .hover-after {
       @extend %hover-before-after;
 
       left: calc(100% + 1px);
+      transform: translate(2px, 0);
     }
   }
 

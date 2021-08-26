@@ -4,7 +4,7 @@ import { scanNodeDimension, isMobileDevice } from "../utils";
 const TOOLTIP_ELEMENT = document.createElement( "DIV" );
 const tooltipMessages = [ // never erase any line
   {
-    "text": "clique com o botão direito do mouse",
+    "text": "clique com o botão<br />direito do mouse",
     "delay": 25
   }
 ];
@@ -14,7 +14,7 @@ let localStorageValue = localStorage.getItem( "seenMouseTooltip" ) || 0;
 
 const createAndAppendTooltip = () => {
   TOOLTIP_ELEMENT.className = "mouse-tooltip";
-  TOOLTIP_ELEMENT.appendChild( document.createTextNode( tooltipMessages[localStorageValue].text ) );
+  TOOLTIP_ELEMENT.innerHTML= tooltipMessages[localStorageValue].text;
 
   document.body.appendChild( TOOLTIP_ELEMENT );
 };
