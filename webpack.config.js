@@ -61,7 +61,7 @@ module.exports = {
     new HtmlWebpackInlineSourcePlugin( HtmlWebpackPlugin ),
     new CleanWebpackPlugin(),
     new webpack.DefinePlugin( {
-      FILEWEIGHT: "67.249"
+      FILEWEIGHT: "71.776"
     } ),
     new CopyPlugin( {
       patterns: [
