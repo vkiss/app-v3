@@ -1,4 +1,5 @@
-import { convertBlankSpaceToTrailingSpacesElement } from "../utils";
+import { convertBlankSpaceToTrailingSpacesElement, getPackageVersion } from "../utils";
+import globalVars from "../data/global-vars.json";
 
 const regularNotes = [
   "tipografia:#<a target=\"_blank\" href=\"https://sourcefoundry.org/hack/\">hack</a>"
@@ -64,7 +65,7 @@ export function createFooterNotes ( selectedColorPallete ) {
 
   // hosted by
   includeFooterNote(
-    createFooterNoteItem( `hospedado#pela#<a target=\"_blank\" href=\"${UMBLERREF}\">umbler</a>` )
+    createFooterNoteItem( `hospedado#pela#<a target=\"_blank\" href=\"${globalVars.umblerRef}\">umbler</a>` )
   );
 
   // file weight (removed)
@@ -82,6 +83,6 @@ export function createFooterNotes ( selectedColorPallete ) {
   };
 
   includeFooterNote(
-    createFooterNoteItem( `v${filterVersion( VERSION )}#|#<a target="_blank" href="https://github.com/vkiss/root">código#fonte</a>` )
+    createFooterNoteItem( `v${filterVersion( getPackageVersion() )}#|#<a target="_blank" href="https://github.com/vkiss/root">código#fonte</a>` )
   );
 }

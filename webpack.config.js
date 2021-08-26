@@ -61,9 +61,7 @@ module.exports = {
     new HtmlWebpackInlineSourcePlugin( HtmlWebpackPlugin ),
     new CleanWebpackPlugin(),
     new webpack.DefinePlugin( {
-      VERSION: JSON.stringify( require( "./package.json" ).version ),
-      UMBLERREF: JSON.stringify( "https://www.umbler.com/br/seja-bem-vindo?a=7kly6v4e" ),
-      FILEWEIGHT: "65.519"
+      FILEWEIGHT: "67.249"
     } ),
     new CopyPlugin( {
       patterns: [

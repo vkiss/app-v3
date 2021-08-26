@@ -1,4 +1,5 @@
 import { addStyle, convertBlankSpaceToTrailingSpacesElement } from "../utils";
+import globalVars from "../data/global-vars.json";
 
 import logoPicPay from "../assets/logos/picpay.svg";
 import logoUmbler from "../assets/logos/umbler.svg";
@@ -18,7 +19,7 @@ export function createPromoLoop () {
       hat: "AD",
       title: "Umbler",
       matter: 3,
-      href: UMBLERREF,
+      href: globalVars.umblerRef,
       target: "_blank",
       img: logoUmbler,
       imgSize: 50,
