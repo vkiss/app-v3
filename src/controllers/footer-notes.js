@@ -1,5 +1,5 @@
 import { convertBlankSpaceToTrailingSpacesElement, getPackageVersion } from "../utils";
-import globalVars from "../data/global-vars.json";
+import globalVars from "../data/global-vars";
 
 const regularNotes = [
   "tipografia:#<a target=\"_blank\" href=\"https://sourcefoundry.org/hack/\">hack</a>"

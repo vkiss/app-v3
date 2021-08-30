@@ -52,4 +52,14 @@
   p {
     margin: 0;
   }
+
+  a {
+    &:hover {
+      .--context-menu-open & {
+        border-bottom-color: inherit !important;
+        background-color: inherit !important;
+        color: inherit !important;
+      }
+    }
+  }
 }

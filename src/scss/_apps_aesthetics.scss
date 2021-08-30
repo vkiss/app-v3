@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /**
  * crt effect copied from here https://codepen.io/lbebber/pen/XJRdrV?editors=1100
  */
@@ -80,7 +82,7 @@ $screen-background:#121010;
   $steps:20;
 
   @for $i from 0 through $steps {
-    #{percentage($i*(1/$steps))} {
+    #{percentage($i*math.div(1,$steps))} {
       opacity: random();
     }
   }

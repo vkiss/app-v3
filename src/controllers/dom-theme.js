@@ -70,8 +70,6 @@ export function randomizeColorPalette ( randomPalette ) {
   }
 
   .html-comment {
-    font-style: italic;
-    user-select: none;
     color: ${COLOR.COMMENT};
   }
 
@@ -106,7 +104,7 @@ export function randomizeColorPalette ( randomPalette ) {
 
   @media$screen$and$(max-width:$899px) {
     a {
-      color: ${randomPalette.colors[7]};
+      color: ${COLOR.ASPAS};
     }
 
     a.mobile-cta {
@@ -127,8 +125,6 @@ export function randomizeColorPalette ( randomPalette ) {
     }
 
     .--context-menu-open$a.footer-link:hover:not(:focus) {
-      border-bottom-color: inherit;
-      background-color: inherit;
       color: ${differLinkColor};
     }
 
@@ -141,14 +137,6 @@ export function randomizeColorPalette ( randomPalette ) {
 
     .--context-menu-open$a.html-code:hover:not(:focus) {
       color: ${randomPalette.colors[7]};
-      border-bottom-color: inherit;
-      background-color: inherit;
-    }
-
-    .--context-menu-open$aside$a:hover:not(:focus) {
-      color: inherit;
-      border-bottom-color: inherit;
-      background-color: inherit;
     }
   }
   ` );

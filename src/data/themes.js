@@ -1,4 +1,4 @@
-[
+export default [
   {
     "name": "horizon",
     "link": "https://github.com/jolaleye/horizon-theme-vscode",
@@ -54,4 +54,4 @@
     "link": "https://github.com/sdras/night-owl-vscode-theme",
     "colors": [ "#5BDEC9", "#C1EDE6", "#BCE666", "#5BDEC9", ["#F3C384", "#D2F6DB"], "#5E7877", "#031628", "#D4DEEC" ]
   }
-]
+];

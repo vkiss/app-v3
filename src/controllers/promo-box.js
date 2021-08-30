@@ -1,5 +1,5 @@
 import { addStyle, convertBlankSpaceToTrailingSpacesElement } from "../utils";
-import globalVars from "../data/global-vars.json";
+import globalVars from "../data/global-vars";
 
 import logoPicPay from "../assets/logos/picpay.svg";
 import logoUmbler from "../assets/logos/umbler.svg";

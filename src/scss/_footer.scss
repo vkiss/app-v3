@@ -49,3 +49,19 @@ footer {
     }
   }
 }
+
+a {
+  &.footer-link:hover:not(:focus) {
+    .--context-menu-open & {
+      border-bottom-color: inherit;
+      background-color: inherit;
+    }
+  }
+
+  &.html-code:hover:not(:focus) {
+    .--context-menu-open & {
+      border-bottom-color: inherit;
+      background-color: inherit;
+    }
+  }
+}

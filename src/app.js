@@ -1,5 +1,3 @@
-import "./style.scss";
-
 // utils
 import { randomIntFromInterval } from "./utils";
 
@@ -15,7 +13,7 @@ import { mouseTooltipController } from "./controllers/mouse-tooltip";
 import contextMenu from "./controllers/context-menu";
 
 // data
-const themes = require( "./data/themes.json" );
+import themes from "./data/themes";
 
 /**
  * Functions
