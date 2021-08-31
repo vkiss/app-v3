@@ -12,8 +12,8 @@
     "start": "snowpack dev",
     "build": "snowpack build",
     "build:test": "serve ./dist",
-    "deploy": "node app/deploy",
-    "deploy:hml": "node app/deploy hml",
+    "deploy": "npm run build && node app/deploy",
+    "deploy:hml": "npm run build && node app/deploy hml",
     "prepare": "husky install",
     "precommit": "lint-staged"
   },
