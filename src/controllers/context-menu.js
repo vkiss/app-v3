@@ -5,27 +5,27 @@
 import { copyToClipboard, scanNodeDimension, isMobileDevice } from "../utils";
 
 // apps
-import startApp from "../apps/trigger/start";
-import closeApp from "../apps/trigger/close";
-// import pixelEditor from "../apps/pixelEditor";
+import startApp from "$/apps/trigger/start";
+import closeApp from "$/apps/trigger/close";
+// import pixelEditor from "$/apps/pixelEditor";
 
 // assets
-import telegramSuperior from "../assets/logos/telegram.svg";
-import zipZopLogo from "../assets/logos/zipzop.svg";
-// import logoXP from "../assets/logos/xp.svg";
-import githubLogo from "../assets/logos/github.svg";
-import npmLogo from "../assets/logos/npm.svg";
-import chromeLogo from "../assets/logos/chrome.svg";
-import parajegas from "../assets/logos/parajegas.svg";
-import sophialis from "../assets/logos/sophialis.svg";
-import greensign from "../assets/logos/greensign.svg";
-import movelsoft from "../assets/logos/movelsoft.svg";
+import telegramSuperior from "$/assets/logos/telegram.svg";
+import zipZopLogo from "$/assets/logos/zipzop.svg";
+// import logoXP from "$/assets/logos/xp.svg";
+import githubLogo from "$/assets/logos/github.svg";
+import npmLogo from "$/assets/logos/npm.svg";
+import chromeLogo from "$/assets/logos/chrome.svg";
+import parajegas from "$/assets/logos/parajegas.svg";
+import sophialis from "$/assets/logos/sophialis.svg";
+import greensign from "$/assets/logos/greensign.svg";
+import movelsoft from "$/assets/logos/movelsoft.svg";
 
 // assets: icons
-import emailIcon from "../assets/icons/email.svg";
-import linkBlank from "../assets/icons/external-link.svg";
-import portfolioLogo from "../assets/icons/code.svg";
-import copyIcon from "../assets/icons/copy.svg";
+import emailIcon from "$/assets/icons/email.svg";
+import linkBlank from "$/assets/icons/external-link.svg";
+import portfolioLogo from "$/assets/icons/code.svg";
+import copyIcon from "$/assets/icons/copy.svg";
 
 /**
  * Data

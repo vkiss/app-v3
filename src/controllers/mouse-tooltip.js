@@ -1,4 +1,4 @@
-import { scanNodeDimension, isMobileDevice } from "../utils";
+import { scanNodeDimension, isMobileDevice } from "$/utils";
 
 // vars
 const TOOLTIP_ELEMENT = document.createElement( "DIV" );

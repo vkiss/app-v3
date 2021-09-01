@@ -8,7 +8,7 @@ module.exports = {
     /* ... */
   },
   alias: {
-    "$data": "/data"
+    "$": "./src/"
   },
   plugins: [
     [

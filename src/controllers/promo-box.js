@@ -1,8 +1,8 @@
-import { addStyle, convertBlankSpaceToTrailingSpacesElement } from "../utils";
-import globalVars from "../data/global-vars";
+import { addStyle, convertBlankSpaceToTrailingSpacesElement } from "$/utils";
+import globalVars from "$/data/global-vars";
 
-import logoPicPay from "../assets/logos/picpay.svg";
-import logoUmbler from "../assets/logos/umbler.svg";
+import logoPicPay from "$/assets/logos/picpay.svg";
+import logoUmbler from "$/assets/logos/umbler.svg";
 
 export function createPromoLoop () {
   const promos = [
