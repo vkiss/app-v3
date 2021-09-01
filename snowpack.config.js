@@ -7,6 +7,9 @@ module.exports = {
   mount: {
     /* ... */
   },
+  alias: {
+    "$data": "/data"
+  },
   plugins: [
     [
       "@snowpack/plugin-sass", {

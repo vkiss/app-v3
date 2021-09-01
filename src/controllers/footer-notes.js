@@ -1,4 +1,4 @@
-import { convertBlankSpaceToTrailingSpacesElement, getPackageVersion } from "../utils";
+import { convertBlankSpaceToTrailingSpacesElement } from "../utils";
 import globalVars from "../data/global-vars";
 
 const regularNotes = [
@@ -83,6 +83,6 @@ export function createFooterNotes ( selectedColorPallete ) {
   };
 
   includeFooterNote(
-    createFooterNoteItem( `v${filterVersion( getPackageVersion() )}#|#<a target="_blank" href="https://github.com/vkiss/root">código#fonte</a>` )
+    createFooterNoteItem( `v${filterVersion( globalVars.packageVersion )}${globalVars.versionSufix}#|#<a target="_blank" href="https://github.com/vkiss/root">código#fonte</a>` )
   );
 }
