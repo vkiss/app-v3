@@ -1,5 +1,13 @@
+@use "sass:math";
+
+/* stylelint-disable */
 @import "../../../../toolkit/vkwp/scss/variables";
 @import "../../../../toolkit/vkwp/scss/mixins";
+/* stylelint-enable */
+
+@function remy($pxsize, $rembase:16) {
+  @return math.div($pxsize,$rembase) * 1rem;
+}
 
 @mixin paint-svg($color) {
   rect,
