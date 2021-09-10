@@ -29,6 +29,10 @@ $promo-box-border: 1px solid rgba(255, 255, 255, .1);
   @include not-mobile {
     max-width: 500px;
     margin: 0 auto 3ch;
+
+    @include mq(920) {
+      max-width: 350px;
+    }
   }
 
   &-header {
@@ -53,7 +57,7 @@ $promo-box-border: 1px solid rgba(255, 255, 255, .1);
     }
 
     strong {
-      @include not-mobile {
+      @include mq(1000, min) {
         white-space: nowrap;
       }
     }
