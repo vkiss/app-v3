@@ -10,7 +10,7 @@ import closeApp from "$/apps/trigger/close";
 // import pixelEditor from "$/apps/pixelEditor";
 
 // assets
-// import telegramSuperior from "$/assets/logos/telegram.svg";
+import telegramSuperior from "$/assets/logos/telegram.svg";
 // import logoXP from "$/assets/logos/xp.svg";
 import githubLogo from "$/assets/logos/github.svg";
 import npmLogo from "$/assets/logos/npm.svg";
@@ -286,14 +286,19 @@ export default function contextMenuController ( themePallete, randomPromo ) {
         //   "link": "mailto:vinicius.kiss@xpi.com.br?subject=Interesse na vaga de Front end"
         // },
         {
-          "hr": true
-        },
-        {
           "icon": copyIcon,
           "icon_adjust": 2,
           "title": "copiar endereço de e-mail",
           "copy": "contato@vkiss.com.br"
-        }
+        },
+        {
+          "hr": true
+        },
+        {
+          "icon": telegramSuperior,
+          "title": "iniciar conversa no telegram",
+          "link": "https://t.me/vinik"
+        },
       ] );
     } else if ( event.path.includes( document.getElementById( "promo-box" ) ) ) {
       createContextMenu( [
