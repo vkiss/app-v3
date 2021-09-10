@@ -10,8 +10,7 @@ import closeApp from "$/apps/trigger/close";
 // import pixelEditor from "$/apps/pixelEditor";
 
 // assets
-import telegramSuperior from "$/assets/logos/telegram.svg";
-import zipZopLogo from "$/assets/logos/zipzop.svg";
+// import telegramSuperior from "$/assets/logos/telegram.svg";
 // import logoXP from "$/assets/logos/xp.svg";
 import githubLogo from "$/assets/logos/github.svg";
 import npmLogo from "$/assets/logos/npm.svg";
@@ -294,29 +293,6 @@ export default function contextMenuController ( themePallete, randomPromo ) {
           "icon_adjust": 2,
           "title": "copiar endereço de e-mail",
           "copy": "contato@vkiss.com.br"
-        }
-      ] );
-    } else if ( event.path.includes( document.getElementById( "phone-link-desktop" ) ) ) {
-      createContextMenu( [
-        {
-          "icon": zipZopLogo,
-          "icon_adjust": 2,
-          "title": "abrir conversa no whatsapp",
-          "link": `${document.getElementById( "phone-link-desktop" ).getAttribute( "href" )}`
-        },
-        {
-          "icon": telegramSuperior,
-          "title": "abrir conversa no telegram",
-          "link": "https://t.me/vinik"
-        },
-        {
-          "hr": true
-        },
-        {
-          "icon": copyIcon,
-          "icon_adjust": 2,
-          "title": "copiar telefone",
-          "copy": "11985750139"
         }
       ] );
     } else if ( event.path.includes( document.getElementById( "promo-box" ) ) ) {
