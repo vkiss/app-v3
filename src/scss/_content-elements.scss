@@ -9,8 +9,8 @@ a {
 }
 
 #main-app {
-  @include main-app-container();
-  @include main-app-element-controller();
+  @include main-app-container;
+  @include main-app-element-controller;
 
   flex-direction: column;
   justify-content: flex-end;

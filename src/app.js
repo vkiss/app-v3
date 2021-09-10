@@ -2,7 +2,7 @@
 import { vhUpdate } from "vh-watch";
 
 // utils
-import { randomIntFromInterval } from "$/utils";
+import { deleteElement, randomIntFromInterval } from "$/utils";
 
 // controllers
 import { consoleController } from "$/controllers/console";
@@ -32,6 +32,7 @@ const init = () => {
   contextMenu( randomPalette, randomPromo );
   mouseTooltipController();
   vhUpdate();
+  deleteElement( document.getElementById( "first-paint-css" ) );
 };
 
 init();
