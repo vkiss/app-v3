@@ -32,7 +32,7 @@ const init = () => {
   contextMenu( randomPalette, randomPromo );
   mouseTooltipController();
   vhUpdate();
-  deleteElement( document.getElementById( "first-paint-css" ) );
+  deleteElement( document.getElementById( "temp-first-paint-css" ) );
 };
 
 init();

@@ -3,15 +3,13 @@
 $mobile-resolution: 900;
 
 @import
-  "./scss/browser-behaviours",
-  "./scss/footer",
-  "./scss/footer-notes",
-  "./scss/content-elements",
-  "./scss/fake-html",
-  "./scss/promo-box",
-  "./scss/context-menu",
-  "./scss/mouse-tooltip",
-  "./scss/apps_aesthetics";
+  "./scss/delayed/browser-behaviours",
+  "./scss/delayed/footer-notes",
+  "./scss/delayed/fake-html",
+  "./scss/delayed/promo-box",
+  "./scss/delayed/context-menu",
+  "./scss/delayed/mouse-tooltip",
+  "./scss/delayed/apps_aesthetics";
 
 // trumps
-@import "./scss/helpers";
+@import "./scss/delayed/helpers";
