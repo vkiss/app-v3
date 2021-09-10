@@ -68,10 +68,10 @@ export function createFooterNotes ( selectedColorPallete ) {
     createFooterNoteItem( `hospedado#pela#<a target=\"_blank\" href=\"${globalVars.umblerRef}\">umbler</a>` )
   );
 
-  // file weight (removed)
-  // includeFooterNote(
-  //   createFooterNoteItem( `peso:#${FILEWEIGHT}kb` )
-  // );
+  // cookies warning
+  includeFooterNote(
+    createFooterNoteItem( "este#site#<strong>não</strong>#utiliza#cookies" )
+  );
 
   // version and source code
   const filterVersion = ( version ) => {
