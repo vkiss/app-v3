@@ -2,7 +2,7 @@ import { convertBlankSpaceToTrailingSpacesElement } from "$/utils";
 import globalVars from "$/data/global-vars";
 
 const regularNotes = [
-  "tipografia:#<a target=\"_blank\" href=\"https://sourcefoundry.org/hack/\">hack</a>"
+  "tipografia:#<a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://sourcefoundry.org/hack/\">hack</a>"
 ];
 
 const createFooterNoteItem = ( content ) => {
@@ -24,7 +24,7 @@ export function createFooterNotes ( selectedColorPallete ) {
   // html syntax
   if ( selectedColorPallete.name ) {
     const palleteItemP = document.createElement( "P" );
-    palleteItemP.innerHTML = `${convertBlankSpaceToTrailingSpacesElement( ".tema da sintax baseado em " )}${( selectedColorPallete.link ? `<a target=\"_blank\" href="${selectedColorPallete.link}">` : "" )}${convertBlankSpaceToTrailingSpacesElement( selectedColorPallete.name )}${( selectedColorPallete.link ? "</a>" : "" )}`;
+    palleteItemP.innerHTML = `${convertBlankSpaceToTrailingSpacesElement( ".tema da sintax baseado em " )}${( selectedColorPallete.link ? `<a target="_blank" rel="noopener noreferrer" href="${selectedColorPallete.link}">` : "" )}${convertBlankSpaceToTrailingSpacesElement( selectedColorPallete.name )}${( selectedColorPallete.link ? "</a>" : "" )}`;
 
     includeFooterNote( palleteItemP );
   }
@@ -65,7 +65,7 @@ export function createFooterNotes ( selectedColorPallete ) {
 
   // hosted by
   includeFooterNote(
-    createFooterNoteItem( `hospedado#pela#<a target=\"_blank\" href=\"${globalVars.umblerRef}\">umbler</a>` )
+    createFooterNoteItem( `hospedado#pela#<a target="_blank" rel="noopener noreferrer" href="${globalVars.umblerRef}">umbler</a>` )
   );
 
   // cookies warning
@@ -83,6 +83,6 @@ export function createFooterNotes ( selectedColorPallete ) {
   };
 
   includeFooterNote(
-    createFooterNoteItem( `v${filterVersion( globalVars.packageVersion )}${globalVars.versionSufix}#|#<a target="_blank" href="https://github.com/vkiss/root">código#fonte</a>` )
+    createFooterNoteItem( `v${filterVersion( globalVars.packageVersion )}${globalVars.versionSufix}#|#<a target="_blank" rel="noopener noreferrer" href="https://github.com/vkiss/root">código#fonte</a>` )
   );
 }

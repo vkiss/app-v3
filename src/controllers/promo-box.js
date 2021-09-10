@@ -46,6 +46,9 @@ export function createPromoBox ( promo ) {
 
   promoBoxEl.setAttribute( "href", promo.href );
   promoBoxEl.setAttribute( "target", promo.target );
+  if ( promo.target === "_blank" ) {
+    promoBoxEl.setAttribute( "rel", "noopener noreferrer" );
+  }
   promoBoxEl.className = "promo-box";
 
   promoBoxEl.innerHTML = `
