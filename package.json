@@ -1,6 +1,6 @@
 {
   "name": "vkiss",
-  "version": "3.8.2",
+  "version": "3.9.0",
   "description": "",
   "main": "index.js",
   "author": {
@@ -19,7 +19,7 @@
     "deploy": "npm run build && npm run ready:prod && node app/deploy",
     "deploy:hml": "npm run build && node app/deploy hml",
     "prepare": "husky install",
-    "precommit": "node app/updateGlobalVars && lint-staged"
+    "precommit": "node app/updateGlobalVars && git add src/data/global-vars.js && lint-staged"
   },
   "homepage": "https://github.com/vkiss/root#readme",
   "repository": {
