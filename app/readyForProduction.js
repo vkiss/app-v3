@@ -35,7 +35,7 @@ fs.readFile( indexFile, "utf8", function ( err, data ) {
       return info( chalk.red( cssErr ) );
     }
 
-    const newIndex = data.replace( "<link rel=\"stylesheet\" href=\"./first-paint.css\">", `<style>${ cssData }</style>` );
+    const newIndex = data.replace( "<link rel=\"stylesheet\" href=\"./first-paint.css\">", `<style>${ cssData.trim() }</style>` );
 
     fs.writeFile( indexFile, newIndex, "utf8", function ( nerr ) {
       if ( nerr ) return info( chalk.red( nerr ) );

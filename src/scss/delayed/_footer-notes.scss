@@ -1,10 +1,11 @@
 #footer-notes {
-  @include main-app-element-controller();
+  @include main-app-element-controller;
 
   @include not-mobile {
     position: fixed;
     bottom: 10px;
     left: 10px;
+    display: block;
     overflow: hidden;
     padding: 18px 0 18px 3ch;
     font-size: remy(10);

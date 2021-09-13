@@ -44,6 +44,7 @@
     "media-feature-colon-space-before": "never",
     "media-feature-colon-space-after": "always",
     "at-rule-no-unknown": null,
-    "scss/at-rule-no-unknown": true
+    "scss/at-rule-no-unknown": true,
+    "no-invalid-position-at-import-rule": null
   }
 }
