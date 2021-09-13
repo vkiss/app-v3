@@ -21,7 +21,7 @@ const globalVarsFile = path.resolve( "./", "src/data/global-vars.js" );
 
 /**
   * -----------------------------
-  * Toggle HtmlWebpackInlineSourcePlugin status
+  * Script
   * -----------------------------
   */
 
