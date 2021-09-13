@@ -10,18 +10,84 @@ const hexToRgb = ( hex ) => {
 };
 
 const organizeDOM = () => {
-  /** Envolver aspas em <span> e incluir classe para tematizar */
-  const allKeyElements = document.querySelectorAll( ".html-key" );
+  /* Criação de elementos de código HTML */
+  const allElementsToHidrate = document.querySelectorAll( ".format-html-code" );
 
-  for ( const keyElement of allKeyElements ) {
-    const value = keyElement.innerText.replace( /"/g, "" );
-    const aspasSpan = "<span class=\"html-aspas\">\"</span>";
-    keyElement.innerHTML = aspasSpan + value + aspasSpan;
+  const createHoverElement = ( el, isClosing ) => {
+    const finalElement = document.createElement( "SPAN" );
+    finalElement.className = `hover-${isClosing ? "after" : "before"}`;
+
+    const openHtml = document.createTextNode( `<${isClosing ? "/" : ""}` );
+    const elementHtml = document.createElement( "SPAN" );
+    elementHtml.className = "html-element";
+    elementHtml.innerHTML = el.nodeName.toLowerCase();
+    const closeHtml = document.createTextNode( ">" );
+
+    finalElement.appendChild( openHtml );
+    finalElement.appendChild( elementHtml );
+
+    if ( !isClosing ) {
+      const renderAttributes = ["href"];
+      for ( const attribute of el.attributes ) {
+        if ( renderAttributes.includes( attribute.nodeName ) ) {
+          const spaceElement = document.createElement( "SPAN" );
+          spaceElement.className = "html-space";
+          spaceElement.innerHTML=" <span>•</span>";
+          finalElement.appendChild( spaceElement );
+
+          const attributeElement = document.createElement( "SPAN" );
+          attributeElement.className = "html-attribute";
+          attributeElement.innerHTML = attribute.nodeName;
+          finalElement.appendChild( attributeElement );
+
+          const equalSignElement = document.createElement( "SPAN" );
+          equalSignElement.className = "html-equal-sign";
+          equalSignElement.innerHTML = "=";
+          finalElement.appendChild( equalSignElement );
+
+          const keyElement = document.createElement( "SPAN" );
+          keyElement.className = "html-key";
+          for ( let i = 0; i < 2; i++ ) {
+            const aspasElement = document.createElement( "SPAN" );
+            aspasElement.className = "html-aspas";
+            aspasElement.innerHTML="\"";
+            keyElement.appendChild( aspasElement );
+
+            if ( i == 0 ) {
+              keyElement.appendChild( document.createTextNode( attribute.value ) );
+            }
+          }
+          finalElement.appendChild( keyElement );
+        }
+      }
+    }
+
+    finalElement.appendChild( closeHtml );
+
+    return finalElement;
+  };
+
+  for ( const element of allElementsToHidrate ) {
+    const innerHtmlContent = element.innerHTML;
+    element.innerHTML = "";
+    element.classList.remove( "format-html-code" );
+    element.classList.add( "html-code" );
+
+    const hoverBefore = createHoverElement( element );
+    element.appendChild( hoverBefore );
+
+    const innerContent = document.createElement( "SPAN" );
+    innerContent.innerHTML = convertBlankSpaceToTrailingSpacesElement( innerHtmlContent.trim() );
+    element.appendChild( innerContent );
+
+    const hoverAfter = createHoverElement( element, 1 );
+    element.appendChild( hoverAfter );
   }
 };
 
 export function randomizeColorPalette ( randomPalette ) {
   organizeDOM();
+
   const filterResult = ( number ) => { return ( number === 3 ? 4 : number ); };
   const randomColor = randomPalette.colors[filterResult( randomIntFromInterval( 1, 3 ) )];
   const differLinkColor = typeof( randomColor ) === "string" ? randomColor : randomColor[0];

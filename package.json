@@ -1,6 +1,6 @@
 {
   "name": "vkiss",
-  "version": "3.8.1",
+  "version": "3.8.2",
   "description": "",
   "main": "index.js",
   "author": {
@@ -9,16 +9,16 @@
     "url": "http://vkiss.com.br/"
   },
   "scripts": {
-    "prestart": "node app/updateGlobalVars ",
+    "prestart": "node app/updateGlobalVars",
     "start": "snowpack dev",
-    "prebuild": "node app/updateGlobalVars ",
+    "prebuild": "node app/updateGlobalVars",
     "build": "snowpack build",
     "build:test": "serve ./dist",
     "ready:prod": "node app/copyFirstPaintCss",
     "deploy": "npm run build && npm run ready:prod && node app/deploy",
     "deploy:hml": "npm run build && node app/deploy hml",
     "prepare": "husky install",
-    "precommit": "lint-staged"
+    "precommit": "node app/updateGlobalVars && lint-staged"
   },
   "homepage": "https://github.com/vkiss/root#readme",
   "repository": {
