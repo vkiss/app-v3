@@ -3,6 +3,13 @@ import generateSvg from "../../controllers/svgGenerator";
 
 // services
 import getCanvasSize from "../../services/getCanvasSize";
+import generateASCIICode from "../../services/generateASCIICode";
+
+// assets
+import copyIcon from "$/assets/icons/copy.svg";
+
+// utils
+import { copyToClipboard } from "$/utils";
 
 export default function previewPannel () {
   const container = document.createElement( "DIV" );
@@ -32,6 +39,16 @@ export default function previewPannel () {
 
   const decodedTextArea = document.createElement( "TEXTAREA" );
   decodedTextArea.id= "textarea-export-value";
+
+  decodedTextArea.contextMenu = [{
+    "icon": copyIcon,
+    "icon_adjust": 2,
+    "title": "copiar código",
+    "action": () => {
+      copyToClipboard( generateASCIICode( JSON.parse( sessionStorage.getItem( "pixelEditor_canvasBoard" ) ) ) );
+    }
+  }];
+
   decodedTextArea.setAttribute( "readonly", "readonly" );
   decodedTextArea.addEventListener( "click", () => {
     decodedTextArea.focus();

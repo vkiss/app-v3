@@ -5,16 +5,26 @@ import portfolio from "$/controllers/context-menu/content/portfolio";
 import chromePlugins from "$/controllers/context-menu/content/chrome-plugins";
 import divider from "$/controllers/context-menu/content/divider";
 
+import labIcon from "$/assets/icons/lab.svg";
+import pixelEditor from "$/apps/pixelEditor";
+
 export default [
   npmPackages,
   portfolio,
   chromePlugins,
-  // divider,
-  // {
-  //   "title": "start pixel.js",
-  //   "type": "app",
-  //   "app": pixelEditor
-  // },
+  divider,
+  {
+    "icon": labIcon,
+    "icon_adjust": 2,
+    "title": "lab",
+    "sort": "abc",
+    "itens": [
+      {
+        "label": "icon-editor.js",
+        "app": pixelEditor
+      },
+    ]
+  },
   divider,
   {
     "icon": githubLogo,

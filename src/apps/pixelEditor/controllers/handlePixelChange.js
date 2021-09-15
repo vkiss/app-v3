@@ -4,6 +4,7 @@ import generateSvg from "./svgGenerator";
 
 // services
 import getTilePosition from "../services/getTilePosition";
+import generateASCIICode from "../services/generateASCIICode";
 
 // :: helpers
 const handlerColorChangeAction = ( tile, color ) => {
@@ -12,21 +13,15 @@ const handlerColorChangeAction = ( tile, color ) => {
 };
 
 const encodeMap = ( svgArray ) => {
-  return JSON.stringify( svgArray )
-    .replace( /{"x":/g, "" )
-    .replace( /,"y":/g, "," )
-    .replace( /},/g, "|" )
-    .replace( /}/g, "" )
-    .replace( /\[/g, "" )
-    .replace( /\]/g, "" );
+  return generateASCIICode( svgArray ).trim();
 };
 
 // ::
-export default function handleColorChange ( tile ) {
+export default function handlePixelChange ( tile ) {
   const isTainted = tile.dataset.color == "#000";
   const tileCoordinates = getTilePosition( tile );
 
-  drawOnCanvas( getTilePosition( tile ), isTainted );
+  drawOnCanvas( tileCoordinates, isTainted );
 
   const CANVAS_BOARD = JSON.parse( sessionStorage.getItem( "pixelEditor_canvasBoard" ) );
 

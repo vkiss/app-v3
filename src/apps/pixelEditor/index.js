@@ -17,9 +17,9 @@ export function generatePixelSvg() {
 export default function pixelEditor () {
   // init session storage
   sessionStorage.setItem( "pixelEditor_currentTool", "pen" );
-  sessionStorage.setItem( "pixelEditor_config_tilesize", 25 );
-  sessionStorage.setItem( "pixelEditor_config_x", 21 );
-  sessionStorage.setItem( "pixelEditor_config_y", 21 );
+  sessionStorage.setItem( "pixelEditor_config_tilesize", 15 );
+  sessionStorage.setItem( "pixelEditor_config_x", 32 );
+  sessionStorage.setItem( "pixelEditor_config_y", 32 );
   sessionStorage.setItem( "pixelEditor_canvasBoard", JSON.stringify( [] ) );
 
   const thisApp = document.createElement( "SECTION" );
@@ -30,7 +30,7 @@ export default function pixelEditor () {
   thisApp.appendChild( previewPannel() );
 
   return {
-    monitorName: "Pixel Editor",
+    monitorName: "Icon Editor",
     element: thisApp,
   };
 }

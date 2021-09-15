@@ -18,4 +18,4 @@ export default function updateCanvas ( canvasElement = document.querySelector( "
     previewElement.width = getCanvasSize( "X" ) / parseInt( sessionStorage.getItem( "pixelEditor_config_tilesize" ) ) ;
     previewElement.height = getCanvasSize( "Y" ) / parseInt( sessionStorage.getItem( "pixelEditor_config_tilesize" ) ) ;
   }
-};
+}

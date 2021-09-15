@@ -4,10 +4,11 @@ const TOOLBAR_TOOLS = [
   {
     "name": "tool: pen",
     "tool": "pen",
-    "action": () => {
-      console.log( "pen", currentTool );
-    }
   },
+  // {
+  //   "name": "tool: mirror-pen",
+  //   "tool": "mirror-pen",
+  // },
   {
     "divider": true
   },
@@ -101,12 +102,12 @@ const toolbarClick = ( event ) => {
   const toolButton = event.target;
   event.preventDefault();
 
-  if ( toolButton.action ) {
-    toolButton.action( event );
+  if ( toolButton.toolName ) {
+    sessionStorage.setItem( "pixelEditor_currentTool", toolButton.toolName );
   }
 
-  if ( toolButton.tool ) {
-    sessionStorage.setItem( "pixelEditor_currentTool", toolButton.toolName );
+  if ( toolButton.action ) {
+    toolButton.action( event );
   }
 };
 

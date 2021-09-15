@@ -1,12 +1,12 @@
 // controllers
-import handleColorChange from "../../controllers/handleColorChange";
+import handlePixelChange from "../../controllers/handlePixelChange";
 import updateCanvas from "../../controllers/canvasController";
 
 const canvasClick = ( event ) => {
   const that = event.target;
 
   if ( that.classList.contains( "pixel-editor__canvas-tile" ) ) {
-    handleColorChange( that );
+    handlePixelChange( that );
   }
 };
 

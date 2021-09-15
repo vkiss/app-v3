@@ -1,7 +1,7 @@
 @import "../../scss/toolkit";
 
 .pixel-editor {
-  @include second-app-container-shared-config();
+  @include second-app-container-shared-config;
 
   ::selection {
     background-color: #0FF;
