@@ -286,14 +286,17 @@ export default function contextMenuController ( themePallete, randomPromo ) {
         //   "link": "mailto:vinicius.kiss@xpi.com.br?subject=Interesse na vaga de Front end"
         // },
         {
+          "hr": true
+        },
+        {
           "icon": copyIcon,
           "icon_adjust": 2,
           "title": "copiar endereço de e-mail",
           "copy": "contato@vkiss.com.br"
-        },
-        {
-          "hr": true
-        },
+        }
+      ] );
+    } else if ( event.path.includes( document.getElementById( "telegram-link-desktop" ) ) ) {
+      createContextMenu( [
         {
           "icon": telegramSuperior,
           "title": "iniciar conversa no telegram",
