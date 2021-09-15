@@ -3,9 +3,25 @@ h1 {
   text-transform: uppercase;
 }
 
+@at-root {
+  %prevent-doubletap-zoom {
+    touch-action: manipulation;
+  }
+}
+
 a {
+  @extend %prevent-doubletap-zoom;
+
   border-bottom: 1px solid currentColor;
   text-decoration: none;
+}
+
+button {
+  @extend %prevent-doubletap-zoom;
+}
+
+[role="button"] {
+  @extend %prevent-doubletap-zoom;
 }
 
 #main-app {

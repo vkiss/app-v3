@@ -53,12 +53,12 @@ export function createFooterNotes ( selectedColorPallete ) {
         "link": "http://vaadin.com/font-icons"
       },
       {
-        "credit": "wikipedia",
-        "link": "https://commons.wikimedia.org/wiki/File:Npm-logo.svg"
-      },
-      {
         "credit": "icon8",
         "link": "https://icons8.com/"
+      },
+      {
+        "credit": "svgrepo",
+        "link": "https://www.svgrepo.com/svg/130038/flasks"
       }
     ] ) )
   );

@@ -25,6 +25,7 @@ import emailIcon from "$/assets/icons/email.svg";
 import linkBlank from "$/assets/icons/external-link.svg";
 import portfolioLogo from "$/assets/icons/code.svg";
 import copyIcon from "$/assets/icons/copy.svg";
+import closeIcon from "$/assets/icons/close.svg";
 
 /**
  * Data
@@ -150,6 +151,7 @@ const createContextMenu = ( menuData = contextMenuItens ) => {
 
     if ( menuItem.hr ) {
       item.className = "context-menu-hr";
+      item.setAttribute( "data-prevent-closing-on-click", true );
     } else {
       item.className = "context-menu-primary-item";
     }
@@ -175,7 +177,6 @@ const createContextMenu = ( menuData = contextMenuItens ) => {
       item.setAttribute( "href", menuItem.link );
       item.setAttribute( "target", "_blank" );
       item.setAttribute( "rel", "noopener noreferrer" );
-      item.style.cursor = "pointer";
     }
 
     if ( menuItem.copy ) {
@@ -195,6 +196,7 @@ const createContextMenu = ( menuData = contextMenuItens ) => {
     }
 
     if ( menuItem.itens ) {
+      item.setAttribute( "data-prevent-closing-on-click", true );
       const subMenu = document.createElement( "DIV" );
       subMenu.className = "context-menu-sub-menu";
 
@@ -208,9 +210,17 @@ const createContextMenu = ( menuData = contextMenuItens ) => {
       } );
 
       for ( const subMenuItem of itensArray ) {
-        const subItem = document.createElement( "A" );
+        const isNotLink = subMenuItem.app;
+
+        const subItem = document.createElement( isNotLink ? "SPAN" : "A" );
         subItem.className = "context-menu-secondary-item";
-        subItem.setAttribute( "href", subMenuItem.link );
+        if ( isNotLink ) {
+          subItem.setAttribute( "role", "button" );
+        } else {
+          subItem.setAttribute( "href", subMenuItem.link );
+          subItem.setAttribute( "target", "_blank" );
+          subItem.setAttribute( "rel", "noopener noreferrer" );
+        }
 
         if ( subMenuItem.icon ) {
           const iconContainer = document.createElement( "SPAN" );
@@ -220,7 +230,6 @@ const createContextMenu = ( menuData = contextMenuItens ) => {
           adjustIconPadding( iconContainer, subMenuItem );
 
           subItem.appendChild( iconContainer );
-
         }
 
         const subItemTextContainer = document.createElement( "SPAN" );
@@ -228,13 +237,19 @@ const createContextMenu = ( menuData = contextMenuItens ) => {
         subItemTextContainer.appendChild( document.createTextNode( subMenuItem.label ) );
         subItem.appendChild( subItemTextContainer );
 
-        subItem.setAttribute( "target", "_blank" );
-        subItem.setAttribute( "rel", "noopener noreferrer" );
-        subItem.style.cursor = "pointer";
-
         subItem.addEventListener( "click", () => {
           closeMenu();
         } );
+
+        if ( subMenuItem.app ) {
+          subItem.addEventListener( "click", () => {
+            if ( subMenuItem.app === closeApp ) {
+              closeApp();
+            } else {
+              startApp( subMenuItem.app );
+            }
+          } );
+        }
 
         subMenu.appendChild( subItem );
       }
@@ -323,7 +338,9 @@ export default function contextMenuController ( themePallete, randomPromo ) {
       if ( document.body.classList.contains( "--run-on-bg-finish" ) ) {
         createContextMenu( [
           {
-            "title": "return",
+            "icon": closeIcon,
+            "icon_adjust": 2,
+            "title": "fechar aplicativo",
             "app": closeApp
           },
         ] );
@@ -365,6 +382,11 @@ export default function contextMenuController ( themePallete, randomPromo ) {
   } );
 
   window.addEventListener( "click", ( event ) => {
+    if (
+      event.target.dataset.preventClosingOnClick
+      || event.target === CONTEXTMENU
+      || event.target.classList.contains( "context-menu-sub-menu" )
+    ) { return; }
     if ( document.body.classList.contains( "--context-menu-open" ) ) {
       if ( !event.path.includes( CONTEXTMENU ) ) {
         event.preventDefault();

@@ -79,6 +79,11 @@
 
   &-secondary-item {
     @extend %context-menu-items-shared;
+
+    &[role="button"],
+    &:is(a) {
+      cursor: pointer;
+    }
   }
 
   @at-root %left-offset {
@@ -89,6 +94,7 @@
     @extend %left-offset;
 
     flex-grow: 1;
+    pointer-events: none;
   }
 
   @at-root %svg-container {
