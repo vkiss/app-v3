@@ -4,8 +4,12 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   root: "./src",
+  exclude: [
+    "**/*.md"
+  ],
   mount: {
-    /* ... */
+    src: "/",
+    public: "/",
   },
   alias: {
     "$": "./src/"
