@@ -49,6 +49,12 @@ const contextMenuItens = [
       {
         "icon": npmLogo,
         "icon_adjust": 2,
+        "label": "simple-webp-converter",
+        "link": "https://www.npmjs.com/package/simple-webp-converter"
+      },
+      {
+        "icon": npmLogo,
+        "icon_adjust": 2,
         "label": "vh-watch",
         "link": "https://www.npmjs.com/package/vh-watch"
       }
