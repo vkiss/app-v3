@@ -1,0 +1,31 @@
+{
+  "short_name": "Vkiss",
+  "name": "Vkiss",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/favicon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/?source=pwa",
+  "background_color": "#E5446F",
+  "display": "fullscreen",
+  "scope": "/",
+  "theme_color": "#E5446F",
+  "shortcuts": [
+    {
+      "name": "Testefullname",
+      "short_name": "Testesn",
+      "description": "Descrição do teste",
+      "url": "/?source=pwa&teste=true",
+      "icons": [{ "src": "/favicon.png", "sizes": "192x192" }]
+    }
+  ],
+  "description": "Aplicativo pessoal"
+}
