@@ -62,3 +62,17 @@
     }
   }
 }
+
+.mobile-version-display {
+  @include mobile {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    font-size: 10px;
+    opacity: .5;
+  }
+
+  @include not-mobile {
+    display: none;
+  }
+}

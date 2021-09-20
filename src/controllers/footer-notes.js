@@ -1,6 +1,9 @@
 import { convertBlankSpaceToTrailingSpacesElement } from "$/utils";
 import globalVars from "$/data/global-vars";
 
+// ELEMENTS
+const FOOTER_NOTES = document.getElementById( "footer-notes" );
+
 const regularNotes = [
   "tipografia:#<a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://sourcefoundry.org/hack/\">hack</a>"
 ];
@@ -13,7 +16,7 @@ const createFooterNoteItem = ( content ) => {
 };
 
 const includeFooterNote = ( itemToInclude ) => {
-  document.getElementById( "footer-notes" ).appendChild( itemToInclude );
+  FOOTER_NOTES.appendChild( itemToInclude );
 };
 
 export function createFooterNotes ( selectedColorPallete ) {
@@ -82,7 +85,14 @@ export function createFooterNotes ( selectedColorPallete ) {
     return `${major}.${minor}${ patch === "0" ? "" : "." + patch }`;
   };
 
+  const versionText = `v${filterVersion( globalVars.packageVersion )}${globalVars.versionSufix}`;
+
   includeFooterNote(
-    createFooterNoteItem( `v${filterVersion( globalVars.packageVersion )}${globalVars.versionSufix}#|#<a target="_blank" rel="noopener noreferrer" href="https://github.com/vkiss/root">código#fonte</a>` )
+    createFooterNoteItem( `v${versionText}#|#<a target="_blank" rel="noopener noreferrer" href="https://github.com/vkiss/root">código#fonte</a>` )
   );
+
+  const mobileVersion = document.createElement( "DIV" );
+  mobileVersion.className = "mobile-version-display";
+  mobileVersion.innerHTML = versionText;
+  document.body.appendChild( mobileVersion );
 }
