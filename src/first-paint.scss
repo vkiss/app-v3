@@ -2,20 +2,7 @@
 
 $mobile-resolution: 900;
 
-// temp - start
-
-html,
-aside:after {
-  background-color: #000;
-}
-
-body,
-#footer-notes {
-  display: none;
-}
-
-// temp - end
-
 @import
+  "./scss/first-paint/temp-css",
   "./scss/first-paint/content-elements",
   "./scss/first-paint/footer";

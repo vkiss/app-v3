@@ -1,0 +1,14 @@
+/**
+ * Este CSS temporário serve para minimizar o cls, deixando a tela inicial
+ * totalmente preta, e exibindo com CSS pelo arquivo carregado no final do DOM.
+ */
+
+html,
+aside:after {
+  background-color: #000;
+}
+
+body,
+#footer-notes {
+  display: none;
+}
