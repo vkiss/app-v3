@@ -88,7 +88,7 @@ export function createFooterNotes ( selectedColorPallete ) {
   const versionText = `v${filterVersion( globalVars.packageVersion )}${globalVars.versionSufix}`;
 
   includeFooterNote(
-    createFooterNoteItem( `v${versionText}#|#<a target="_blank" rel="noopener noreferrer" href="https://github.com/vkiss/root">código#fonte</a>` )
+    createFooterNoteItem( `${versionText}#|#<a target="_blank" rel="noopener noreferrer" href="https://github.com/vkiss/app">código#fonte</a>` )
   );
 
   const mobileVersion = document.createElement( "DIV" );
