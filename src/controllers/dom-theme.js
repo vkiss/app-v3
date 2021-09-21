@@ -88,43 +88,41 @@ const organizeDOM = () => {
 export function randomizeColorPalette ( randomPalette ) {
   organizeDOM();
 
-  const filterResult = ( number ) => { return ( number === 3 ? 4 : number ); };
-  const randomColor = randomPalette.colors[filterResult( randomIntFromInterval( 1, 3 ) )];
-  const differLinkColor = typeof( randomColor ) === "string" ? randomColor : randomColor[0];
+  const differLinkColor = randomPalette.colors.htmlAttribute; // TODO: rever fluxo de criação de cor aleatório (no fluxo anterior, [3] virava [4])
   // colors
   const COLOR = {
-    ASPAS: typeof( randomPalette.colors[4] ) === "string" ? randomPalette.colors[4] : randomPalette.colors[4][1],
-    VALUE: typeof( randomPalette.colors[4] ) === "string" ? randomPalette.colors[4] : randomPalette.colors[4][0],
-    COMMENT: typeof( randomPalette.colors[5] ) === "string" ? randomPalette.colors[5] : randomPalette.colors[5][1],
-    COMMENT_OPENCLOSE: typeof( randomPalette.colors[5] ) === "string" ? randomPalette.colors[5] : randomPalette.colors[5][0],
+    ASPAS: randomPalette.colors.htmlAspas || randomPalette.colors.htmlValue,
+    VALUE: randomPalette.colors.htmlValue,
+    COMMENT: randomPalette.colors.htmlComment,
+    COMMENT_OPENCLOSE: randomPalette.colors.htmlCommentMarkUp || randomPalette.colors.htmlComment,
   };
 
   addStyle( `
   html,
   aside:after {
-    background-color: ${randomPalette.colors[6]}
+    background-color: ${randomPalette.colors.siteBg}
   }
 
   .html-code {
-    color: ${randomPalette.colors[7]};
+    color: ${randomPalette.colors.plainText};
   }
 
   .hover-before,
   .hover-after {
-    color: ${randomPalette.colors[0]};
+    color: ${randomPalette.colors.brackets};
   }
 
   .html-element {
-    color: ${randomPalette.colors[1]};
+    color: ${randomPalette.colors.htmlElement};
   }
 
   .html-attribute {
     font-style: italic;
-    color: ${randomPalette.colors[2]};
+    color: ${randomPalette.colors.htmlAttribute};
   }
 
   .html-equal-sign {
-    color: ${randomPalette.colors[3]};
+    color: ${randomPalette.colors.htmlEqualSign};
   }
 
   .html-key {
@@ -144,16 +142,16 @@ export function randomizeColorPalette ( randomPalette ) {
   }
 
   .promo-box-ad {
-    color: ${randomPalette.colors[7]};
+    color: ${randomPalette.colors.plainText};
   }
 
   .promo-box-header {
-    color: rgba(${hexToRgb( randomPalette.colors[7] ).r},${hexToRgb( randomPalette.colors[7] ).g},${hexToRgb( randomPalette.colors[7] ).b},.7);
+    color: rgba(${hexToRgb( randomPalette.colors.plainText ).r},${hexToRgb( randomPalette.colors.plainText ).g},${hexToRgb( randomPalette.colors.plainText ).b},.7);
   }
 
   .promo-box-media$svg$rect,
   .promo-box-media$svg$path {
-    fill: ${randomPalette.colors[7]};
+    fill: ${randomPalette.colors.plainText};
   }
 
   #footer-notes,
@@ -163,7 +161,7 @@ export function randomizeColorPalette ( randomPalette ) {
 
   #footer-notes$a:focus,
   #footer-notes$a:hover {
-    color: ${randomPalette.colors[6]};
+    color: ${randomPalette.colors.siteBg};
     border-bottom-color: ${COLOR.COMMENT_OPENCLOSE};
     background-color: ${COLOR.COMMENT_OPENCLOSE};
   }
@@ -187,7 +185,7 @@ export function randomizeColorPalette ( randomPalette ) {
     a.footer-link:hover {
       border-bottom-color: ${differLinkColor};
       background-color: ${differLinkColor};
-      color: ${randomPalette.colors[6]};
+      color: ${randomPalette.colors.siteBg};
     }
 
     .--context-menu-open$a.footer-link:hover:not(:focus) {
@@ -196,13 +194,13 @@ export function randomizeColorPalette ( randomPalette ) {
 
     a.html-code:focus,
     a.html-code:hover {
-      color: ${randomPalette.colors[6]};
-      border-bottom-color: ${randomPalette.colors[7]};
-      background-color: ${randomPalette.colors[7]};
+      color: ${randomPalette.colors.siteBg};
+      border-bottom-color: ${randomPalette.colors.plainText};
+      background-color: ${randomPalette.colors.plainText};
     }
 
     .--context-menu-open$a.html-code:hover:not(:focus) {
-      color: ${randomPalette.colors[7]};
+      color: ${randomPalette.colors.plainText};
     }
   }
   ` );

@@ -4,10 +4,10 @@ export default function favicon ( randomPalette ) {
   canvas.width = 64;
 
   const ctx = canvas.getContext( "2d" );
-  ctx.fillStyle = randomPalette.colors[6]; // bg color
+  ctx.fillStyle = randomPalette.colors.siteBg; // bg color
   ctx.fillRect( 0, 0, canvas.width, canvas.height );
   ctx.font = "30px \"Hack\""; // hack font not working
-  ctx.fillStyle = randomPalette.colors[1]; // html element color
+  ctx.fillStyle = randomPalette.colors.htmlElement; // html element color
   ctx.fillText( "vk", 14, 44 );
 
   const link = document.createElement( "link" );
