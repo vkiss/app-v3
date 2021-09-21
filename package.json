@@ -31,7 +31,7 @@
     "url": "https://github.com/vkiss/root/issues"
   },
   "dependencies": {
-    "vh-watch": "^1.0.0"
+    "vh-watch": "^1.0.1"
   },
   "devDependencies": {
     "@snowpack/plugin-sass": "^1.4.0",

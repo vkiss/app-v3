@@ -1,5 +1,5 @@
 // packages
-import { watchVh } from "vh-watch";
+import { initAndWatchVh } from "vh-watch";
 
 // utils
 import { randomIntFromInterval } from "$/utils";
@@ -33,7 +33,7 @@ const init = () => {
   injectTrailingSpaces();
   contextMenu( randomPalette, randomPromo );
   mouseTooltipController();
-  watchVh();
+  initAndWatchVh();
 
   if ( "serviceWorker" in navigator ) {
     window.addEventListener( "load", function() {
