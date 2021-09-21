@@ -1,4 +1,0 @@
-- [vkiss.com.br](https://www.vkiss.com.br/)
-- [@vinik](https://twitter.com/vinik)
-- [timeline](https://www.polywork.com/vinik)
-- [stackoverflow](https://stackoverflow.com/users/5446961/kiss)
