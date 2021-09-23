@@ -1,0 +1,117 @@
+.html {
+  &-code {
+    position: relative;
+    color: $css--theme-plain-text;
+
+    @at-root %hover-before-after {
+      display: none;
+      color: $css--theme-html-brackets;
+
+      @include not-mobile {
+        position: absolute;
+        bottom: 1px;
+        display: block;
+        font-size: remy(16);
+        font-weight: 400;
+        pointer-events: none;
+        text-transform: none;
+        user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+        white-space: nowrap;
+      }
+    }
+
+    .hover-before {
+      @extend %hover-before-after;
+
+      right: calc(100% + 1px);
+      transform: translate(-2px, 0);
+    }
+
+    .hover-after {
+      @extend %hover-before-after;
+
+      left: calc(100% + 1px);
+      transform: translate(2px, 0);
+    }
+
+    &:hover {
+      &:not(:focus) {
+        .--context-menu-open & {
+          border-bottom-color: inherit;
+          background-color: inherit;
+        }
+      }
+    }
+
+    &[href] {
+      @at-root %html-code-link-focus-hover {
+        border-bottom-color: $css--theme-plain-text;
+        background-color: $css--theme-plain-text;
+        color: $css--theme-site-bg;
+      }
+
+      &:focus {
+        @extend %html-code-link-focus-hover;
+      }
+
+      &:hover {
+        @extend %html-code-link-focus-hover;
+
+        .--context-menu-open & {
+          &:not(:focus) {
+            color: $css--theme-plain-text;
+          }
+        }
+      }
+    }
+  }
+
+  &-space {
+    position: relative;
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #FFF;
+      opacity: .1;
+      pointer-events: none;
+      transform: scale(.6);
+
+      &::selection {
+        background: transparent;
+      }
+    }
+  }
+
+  &-comment {
+    color: $css--theme-html-comment;
+    font-style: italic;
+    user-select: none;
+
+    span {
+      color: $css--theme-html-comment-markup;
+    }
+  }
+
+  &-element {
+    color: $css--theme-html-element;
+  }
+
+  &-equal-sign {
+    color: $css--theme-html-equalsign;
+  }
+
+  &-attribute {
+    color: $css--theme-html-attribute;
+    font-size: italic;
+  }
+
+  &-key {
+    color: $css--theme-html-key;
+  }
+
+  &-aspas {
+    color: $css--theme-html-aspas;
+  }
+}

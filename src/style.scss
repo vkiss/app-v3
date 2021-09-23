@@ -1,15 +1,1 @@
-@import "./scss/toolkit";
-
-$mobile-resolution: 900;
-
-@import
-  "./scss/delayed/browser-behaviours",
-  "./scss/delayed/footer-notes",
-  "./scss/delayed/fake-html",
-  "./scss/delayed/promo-box",
-  "./scss/delayed/context-menu",
-  "./scss/delayed/mouse-tooltip",
-  "./scss/delayed/apps_aesthetics";
-
-// trumps
-@import "./scss/delayed/helpers";
+@import "./scss/bundle/index";

@@ -7,7 +7,7 @@ import { randomIntFromInterval } from "$/utils";
 // controllers
 import { consoleController } from "$/controllers/console";
 import { createPromoLoop, createPromoBox } from "$/controllers/promo-box";
-import { randomizeColorPalette, injectTrailingSpaces } from "$/controllers/dom-theme";
+import { applyDomTheme, injectTrailingSpaces } from "$/controllers/dom-theme";
 import { createFooterNotes } from "$/controllers/footer-notes";
 import { mouseTooltipController } from "$/controllers/mouse-tooltip";
 import contextMenu from "$/controllers/context-menu";
@@ -25,7 +25,7 @@ const init = () => {
   const randomPromo = promoLoop[randomIntFromInterval( 0, promoLoop.length - 1 )];
   const randomPalette = themes[randomIntFromInterval( 0, themes.length - 1 )];
 
-  randomizeColorPalette( randomPalette );
+  applyDomTheme( randomPalette );
   favicon( randomPalette );
   createFooterNotes( randomPalette );
   createPromoBox( randomPromo );

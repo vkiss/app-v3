@@ -1,0 +1,11 @@
+a {
+  color: $css--theme-html-aspas;
+
+  @include not-mobile {
+    color: $css--theme-color-alternate;
+  }
+
+  &.mobile-cta {
+    color: $css--theme-color-alternate;
+  }
+}

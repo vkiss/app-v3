@@ -7,7 +7,7 @@ export default [
       "htmlElement": "#EA6074",
       "htmlAttribute": "#D9985E",
       "htmlEqualSign": "#AAB2C0",
-      "htmlValue": "#8DC56F",
+      "htmlKey": "#8DC56F",
       "htmlComment": "#7E848F",
       "siteBg": "#282C35",
       "plainText": "#AAB2C0",

@@ -1,5 +1,6 @@
-import { addStyle, randomIntFromInterval, convertBlankSpaceToTrailingSpacesElement } from "$/utils";
+import { addStyle, convertBlankSpaceToTrailingSpacesElement, randomValueFromArray } from "$/utils";
 
+// helper
 const hexToRgb = ( hex ) => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec( hex );
   return result ? {
@@ -9,6 +10,7 @@ const hexToRgb = ( hex ) => {
   } : null;
 };
 
+// ::
 const organizeDOM = () => {
   /* Criação de elementos de código HTML */
   const allElementsToHidrate = document.querySelectorAll( ".format-html-code" );
@@ -85,125 +87,71 @@ const organizeDOM = () => {
   }
 };
 
-export function randomizeColorPalette ( randomPalette ) {
+export function applyDomTheme ( randomPalette ) {
   organizeDOM();
 
-  const differLinkColor = randomPalette.colors.htmlAttribute; // TODO: rever fluxo de criação de cor aleatório (no fluxo anterior, [3] virava [4])
-  // colors
-  const COLOR = {
-    ASPAS: randomPalette.colors.htmlAspas || randomPalette.colors.htmlValue,
-    VALUE: randomPalette.colors.htmlValue,
-    COMMENT: randomPalette.colors.htmlComment,
-    COMMENT_OPENCLOSE: randomPalette.colors.htmlCommentMarkUp || randomPalette.colors.htmlComment,
-  };
+  // define css variables
+  const cssVariables = [
+    {
+      "name": "theme-plain-text",
+      "value": randomPalette.colors.plainText
+    },
+    {
+      "name": "theme-site-bg",
+      "value": randomPalette.colors.siteBg
+    },
+    {
+      "name": "theme-html-brackets",
+      "value": randomPalette.colors.brackets
+    },
+    {
+      "name": "theme-html-element",
+      "value": randomPalette.colors.htmlElement
+    },
+    {
+      "name": "theme-html-attribute",
+      "value": randomPalette.colors.htmlAttribute
+    },
+    {
+      "name": "theme-html-equalsign",
+      "value": randomPalette.colors.htmlEqualSign
+    },
+    {
+      "name": "theme-html-aspas",
+      "value": randomPalette.colors.htmlAspas || randomPalette.colors.htmlKey
+    },
+    {
+      "name": "theme-html-key",
+      "value": randomPalette.colors.htmlKey
+    },
+    {
+      "name": "theme-html-key",
+      "value": randomPalette.colors.htmlKey
+    },
+    {
+      "name": "theme-html-comment",
+      "value": randomPalette.colors.htmlComment
+    },
+    {
+      "name": "theme-html-comment-markup",
+      "value": randomPalette.colors.htmlCommentMarkUp || randomPalette.colors.htmlComment
+    },
+    {
+      "name": "theme-color-alternate",
+      "value": randomValueFromArray( [
+        randomPalette.colors.htmlElement,
+        randomPalette.colors.htmlAttribute,
+      ] )
+    },
+  ];
 
-  addStyle( `
-  html,
-  aside:after {
-    background-color: ${randomPalette.colors.siteBg}
+  for ( const cssVariable of cssVariables ) {
+    document.documentElement.style.setProperty( "--" + cssVariable.name, cssVariable.value );
   }
 
-  .html-code {
-    color: ${randomPalette.colors.plainText};
-  }
-
-  .hover-before,
-  .hover-after {
-    color: ${randomPalette.colors.brackets};
-  }
-
-  .html-element {
-    color: ${randomPalette.colors.htmlElement};
-  }
-
-  .html-attribute {
-    font-style: italic;
-    color: ${randomPalette.colors.htmlAttribute};
-  }
-
-  .html-equal-sign {
-    color: ${randomPalette.colors.htmlEqualSign};
-  }
-
-  .html-key {
-    color: ${COLOR.VALUE};
-  }
-
-  .html-aspas {
-    color: ${COLOR.ASPAS};
-  }
-
-  .html-comment {
-    color: ${COLOR.COMMENT};
-  }
-
-  .html-comment$span {
-    color: ${COLOR.COMMENT_OPENCLOSE};
-  }
-
-  .promo-box-ad {
-    color: ${randomPalette.colors.plainText};
-  }
-
-  .promo-box-header {
+  addStyle( `.promo-box-header {
     color: rgba(${hexToRgb( randomPalette.colors.plainText ).r},${hexToRgb( randomPalette.colors.plainText ).g},${hexToRgb( randomPalette.colors.plainText ).b},.7);
-  }
-
-  .promo-box-media$svg$rect,
-  .promo-box-media$svg$path {
-    fill: ${randomPalette.colors.plainText};
-  }
-
-  #footer-notes,
-  #footer-notes$a {
-    color: ${COLOR.COMMENT_OPENCLOSE}
-  }
-
-  #footer-notes$a:focus,
-  #footer-notes$a:hover {
-    color: ${randomPalette.colors.siteBg};
-    border-bottom-color: ${COLOR.COMMENT_OPENCLOSE};
-    background-color: ${COLOR.COMMENT_OPENCLOSE};
-  }
-
-  @media$screen$and$(max-width:$899px) {
-    a {
-      color: ${COLOR.ASPAS};
-    }
-
-    a.mobile-cta {
-      color: ${differLinkColor};
-    }
-  }
-
-  @media$screen$and$(min-width:$900px) {
-    a {
-      color: ${differLinkColor};
-    }
-
-    a.footer-link:focus,
-    a.footer-link:hover {
-      border-bottom-color: ${differLinkColor};
-      background-color: ${differLinkColor};
-      color: ${randomPalette.colors.siteBg};
-    }
-
-    .--context-menu-open$a.footer-link:hover:not(:focus) {
-      color: ${differLinkColor};
-    }
-
-    a.html-code:focus,
-    a.html-code:hover {
-      color: ${randomPalette.colors.siteBg};
-      border-bottom-color: ${randomPalette.colors.plainText};
-      background-color: ${randomPalette.colors.plainText};
-    }
-
-    .--context-menu-open$a.html-code:hover:not(:focus) {
-      color: ${randomPalette.colors.plainText};
-    }
-  }
-  ` );
+  }` );
 }
 
 export function injectTrailingSpaces () {

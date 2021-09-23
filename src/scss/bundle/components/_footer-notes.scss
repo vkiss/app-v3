@@ -8,6 +8,7 @@
     display: block;
     overflow: hidden;
     padding: 18px 0 18px 3ch;
+    color: $css--theme-html-comment-markup;
     font-size: remy(10);
     line-height: 18px;
   }
@@ -45,6 +46,7 @@
     @extend %aside-before-after;
 
     bottom: 0;
+    background-color: $css--theme-site-bg;
     content: " */";
   }
 
@@ -53,7 +55,14 @@
   }
 
   a {
+    color: $css--theme-html-comment-markup;
+
+    &:focus,
     &:hover {
+      border-bottom-color: $css--theme-html-comment-markup;
+      background-color: $css--theme-html-comment-markup;
+      color: $css--theme-site-bg;
+
       .--context-menu-open & {
         border-bottom-color: inherit !important;
         background-color: inherit !important;

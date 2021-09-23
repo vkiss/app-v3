@@ -1,5 +1,5 @@
-footer {
-  @include main-app-element-controller();
+.footer-nav {
+  @include main-app-element-controller;
 
   @include mobile {
     flex-grow: 1;
@@ -48,20 +48,32 @@ footer {
       }
     }
   }
-}
 
-a {
-  &.footer-link:hover:not(:focus) {
-    .--context-menu-open & {
-      border-bottom-color: inherit;
-      background-color: inherit;
+  a {
+    @at-root %footer-links-hover-focus {
+      @include not-mobile {
+        border-bottom-color: $css--theme-color-alternate;
+        background-color: $css--theme-color-alternate;
+        color: $css--theme-site-bg;
+      }
     }
-  }
 
-  &.html-code:hover:not(:focus) {
-    .--context-menu-open & {
-      border-bottom-color: inherit;
-      background-color: inherit;
+    &:focus {
+      @extend %footer-links-hover-focus;
+    }
+
+    &:hover {
+      @extend %footer-links-hover-focus;
+
+      &:not(:focus) {
+        .--context-menu-open & {
+          @include not-mobile {
+            border-bottom-color: inherit;
+            background-color: inherit;
+            color: $css--theme-color-alternate;
+          }
+        }
+      }
     }
   }
 }

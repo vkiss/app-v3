@@ -3,6 +3,7 @@ import convertBlankSpaceToTrailingSpacesElement from "./convertBlankSpaceToTrail
 import copyToClipboard from "./copyToClipboard";
 import isMobileDevice from "./isMobileDevice";
 import randomIntFromInterval from "./randomIntFromInterval";
+import randomValueFromArray from "./randomValueFromArray";
 import scanNodeDimension from "./scanNodeDimension";
 
 export {
@@ -11,5 +12,6 @@ export {
   copyToClipboard,
   isMobileDevice,
   randomIntFromInterval,
+  randomValueFromArray,
   scanNodeDimension,
 };
