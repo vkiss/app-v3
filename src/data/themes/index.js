@@ -1,5 +1,4 @@
 import dracula from "./dracula";
-import draculaSoft from "./draculaSoft";
 import fireflyPro from "./fireflyPro";
 import firefoxTheme from "./firefoxTheme";
 import horizon from "./horizon";
@@ -12,7 +11,6 @@ import winterIsComing from "./winterIsComing";
 
 export default [
   ...dracula,
-  ...draculaSoft,
   ...fireflyPro,
   ...firefoxTheme,
   ...horizon,
