@@ -66,13 +66,16 @@ $promo-box-border: 1px solid rgba(255, 255, 255, .1);
 
   &-media {
     display: flex;
-    min-width: calc(32px + 1rem);
+    min-width: calc(#{$css--promobox-image-size} + 1rem);
     align-items: center;
     justify-content: center;
     padding: 1rem;
     padding-right: 0;
 
     svg {
+      max-width: $css--promobox-image-size;
+      max-height: 50px;
+
       rect,
       path {
         fill: $css--theme-plain-text;

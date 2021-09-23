@@ -1,4 +1,4 @@
-import { addStyle, convertBlankSpaceToTrailingSpacesElement } from "$/utils";
+import { registerCssVar, convertBlankSpaceToTrailingSpacesElement } from "$/utils";
 import globalVars from "$/data/global-vars";
 
 import logoPicPay from "$/assets/logos/picpay.svg";
@@ -54,7 +54,7 @@ export function createPromoBox ( promo ) {
   promoBoxEl.innerHTML = `
     <header class="promo-box-header">${promo.hat}</header>
     <div class="promo-box-body">
-      <figure ${( promo.imgSize ? "style=\"min-width: calc(" + promo.imgSize + "px + 1rem)\"" : "" )} class="promo-box-media" data-max="${promo.imgSize}">
+      <figure class="promo-box-media">
         ${promo.img}
       </figure>
       <div class="promo-box-ad">
@@ -63,11 +63,8 @@ export function createPromoBox ( promo ) {
     </div>
   `;
 
-  addStyle( `
-    .promo-box-media$svg {
-      max-width: ${promo.imgSize || "32"}px;
-      max-height: 50px;
-    }
-  ` );
+  if ( promo.imgSize ) {
+    registerCssVar( "promobox-image-size", promo.imgSize + "px" );
+  }
 }
 
