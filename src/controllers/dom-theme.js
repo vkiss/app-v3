@@ -1,4 +1,4 @@
-import { addStyle, convertBlankSpaceToTrailingSpacesElement, randomValueFromArray } from "$/utils";
+import { addStyle, convertBlankSpaceToTrailingSpacesElement, randomValueFromArray, registerCssVar } from "$/utils";
 
 // helper
 const hexToRgb = ( hex ) => {
@@ -90,8 +90,7 @@ const organizeDOM = () => {
 export function applyDomTheme ( randomPalette ) {
   organizeDOM();
 
-  // define css variables
-  const cssVariables = [
+  registerCssVar( [
     {
       "name": "theme-plain-text",
       "value": randomPalette.colors.plainText
@@ -143,11 +142,7 @@ export function applyDomTheme ( randomPalette ) {
         randomPalette.colors.htmlAttribute,
       ] )
     },
-  ];
-
-  for ( const cssVariable of cssVariables ) {
-    document.documentElement.style.setProperty( "--" + cssVariable.name, cssVariable.value );
-  }
+  ] );
 
   addStyle( `.promo-box-header {
     color: rgba(${hexToRgb( randomPalette.colors.plainText ).r},${hexToRgb( randomPalette.colors.plainText ).g},${hexToRgb( randomPalette.colors.plainText ).b},.7);

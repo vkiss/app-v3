@@ -1,5 +1,4 @@
 const registerFunction = ( varName, varValue ) => {
-  console.log( varName, varValue );
   document.documentElement.style.setProperty( "--" + varName, varValue );
 };
 
@@ -7,6 +6,12 @@ const registerFunction = ( varName, varValue ) => {
  * @function registerCssVar
  */
 export default function registerCssVar ( varName, varValue = null ) {
-  console.log( typeof( varName ) );
-  registerFunction( varName, varValue );
+  if ( typeof( varName ) === "string" ) {
+    registerFunction( varName, varValue );
+    return;
+  }
+
+  for ( const cssVariable of varName ) {
+    registerCssVar( cssVariable.name, cssVariable.value );
+  }
 }

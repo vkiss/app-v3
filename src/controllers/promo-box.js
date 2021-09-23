@@ -1,4 +1,4 @@
-import { registerCssVar, convertBlankSpaceToTrailingSpacesElement } from "$/utils";
+import { convertBlankSpaceToTrailingSpacesElement, registerCssVar } from "$/utils";
 import globalVars from "$/data/global-vars";
 
 import logoPicPay from "$/assets/logos/picpay.svg";
