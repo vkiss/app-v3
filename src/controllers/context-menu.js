@@ -272,19 +272,10 @@ const createContextMenu = ( menuData = contextMenuItens ) => {
   }
 };
 
-export default function contextMenuController ( themePallete, randomPromo ) {
+export default function contextMenuController ( randomPromo ) {
   if ( isMobileDevice() ) { return; }
 
   document.body.appendChild( CONTEXTMENU );
-
-  // addStyle( `
-  // .context-menu-primary-item:hover {
-  //   background-color: ${themePallete.colors[1]}
-  // }
-  // .context-menu-secondary-item:hover {
-  //   background-color: ${themePallete.colors[2]}
-  // }
-  // ` );
 
   window.addEventListener( "contextmenu", ( event ) => {
     // Descomente a linha abaixo para debugar second-apps

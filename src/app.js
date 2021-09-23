@@ -22,16 +22,16 @@ import themes from "./data/themes";
 
 const init = () => {
   const promoLoop = createPromoLoop();
-  const randomPromo = promoLoop[randomIntFromInterval( 0, promoLoop.length - 1 )];
-  const randomPalette = themes[randomIntFromInterval( 0, themes.length - 1 )];
+  const promo = promoLoop[randomIntFromInterval( 0, promoLoop.length - 1 )];
+  const theme = themes[randomIntFromInterval( 0, themes.length - 1 )];
 
-  applyDomTheme( randomPalette );
-  favicon( randomPalette );
-  createFooterNotes( randomPalette );
-  createPromoBox( randomPromo );
-  consoleController( randomPalette );
+  applyDomTheme( theme );
+  favicon( theme );
+  createFooterNotes( theme );
+  createPromoBox( promo, theme );
+  consoleController( theme );
   injectTrailingSpaces();
-  contextMenu( randomPalette, randomPromo );
+  contextMenu( promo );
   mouseTooltipController();
   initAndWatchVh();
 

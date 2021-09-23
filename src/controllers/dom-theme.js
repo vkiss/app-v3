@@ -1,14 +1,4 @@
-import { addStyle, convertBlankSpaceToTrailingSpacesElement, randomValueFromArray, registerCssVar } from "$/utils";
-
-// helper
-const hexToRgb = ( hex ) => {
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec( hex );
-  return result ? {
-    r: parseInt( result[1], 16 ),
-    g: parseInt( result[2], 16 ),
-    b: parseInt( result[3], 16 )
-  } : null;
-};
+import { convertBlankSpaceToTrailingSpacesElement, randomValueFromArray, registerCssVar } from "$/utils";
 
 // ::
 const organizeDOM = () => {
@@ -87,66 +77,62 @@ const organizeDOM = () => {
   }
 };
 
-export function applyDomTheme ( randomPalette ) {
+export function applyDomTheme ( theme ) {
   organizeDOM();
 
   registerCssVar( [
     {
       "name": "theme-plain-text",
-      "value": randomPalette.colors.plainText
+      "value": theme.colors.plainText
     },
     {
       "name": "theme-site-bg",
-      "value": randomPalette.colors.siteBg
+      "value": theme.colors.siteBg
     },
     {
       "name": "theme-html-brackets",
-      "value": randomPalette.colors.brackets
+      "value": theme.colors.brackets
     },
     {
       "name": "theme-html-element",
-      "value": randomPalette.colors.htmlElement
+      "value": theme.colors.htmlElement
     },
     {
       "name": "theme-html-attribute",
-      "value": randomPalette.colors.htmlAttribute
+      "value": theme.colors.htmlAttribute
     },
     {
       "name": "theme-html-equalsign",
-      "value": randomPalette.colors.htmlEqualSign
+      "value": theme.colors.htmlEqualSign
     },
     {
       "name": "theme-html-aspas",
-      "value": randomPalette.colors.htmlAspas || randomPalette.colors.htmlKey
+      "value": theme.colors.htmlAspas || theme.colors.htmlKey
     },
     {
       "name": "theme-html-key",
-      "value": randomPalette.colors.htmlKey
+      "value": theme.colors.htmlKey
     },
     {
       "name": "theme-html-key",
-      "value": randomPalette.colors.htmlKey
+      "value": theme.colors.htmlKey
     },
     {
       "name": "theme-html-comment",
-      "value": randomPalette.colors.htmlComment
+      "value": theme.colors.htmlComment
     },
     {
       "name": "theme-html-comment-markup",
-      "value": randomPalette.colors.htmlCommentMarkUp || randomPalette.colors.htmlComment
+      "value": theme.colors.htmlCommentMarkUp || theme.colors.htmlComment
     },
     {
       "name": "theme-color-alternate",
       "value": randomValueFromArray( [
-        randomPalette.colors.htmlElement,
-        randomPalette.colors.htmlAttribute,
+        theme.colors.htmlElement,
+        theme.colors.htmlAttribute,
       ] )
     },
   ] );
-
-  addStyle( `.promo-box-header {
-    color: rgba(${hexToRgb( randomPalette.colors.plainText ).r},${hexToRgb( randomPalette.colors.plainText ).g},${hexToRgb( randomPalette.colors.plainText ).b},.7);
-  }` );
 }
 
 export function injectTrailingSpaces () {

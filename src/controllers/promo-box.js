@@ -1,6 +1,16 @@
 import { convertBlankSpaceToTrailingSpacesElement, registerCssVar } from "$/utils";
 import promos from "$/data/promos";
 
+// helper
+const hexToRgb = ( hex ) => {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec( hex );
+  return result ? {
+    r: parseInt( result[1], 16 ),
+    g: parseInt( result[2], 16 ),
+    b: parseInt( result[3], 16 )
+  } : null;
+};
+
 export function createPromoLoop () {
 
   let returnLoop = [];
@@ -16,7 +26,7 @@ export function createPromoLoop () {
   return returnLoop;
 }
 
-export function createPromoBox ( promo ) {
+export function createPromoBox ( promo, theme ) {
   const promoBoxEl = document.getElementById( "promo-box" );
 
   promoBoxEl.setAttribute( "href", promo.href );
@@ -37,6 +47,8 @@ export function createPromoBox ( promo ) {
       </div>
     </div>
   `;
+
+  registerCssVar( "promobox-header-color", `rgba(${hexToRgb( theme.colors.plainText ).r},${hexToRgb( theme.colors.plainText ).g},${hexToRgb( theme.colors.plainText ).b},.7)` );
 
   if ( promo.imgSize ) {
     registerCssVar( "promobox-image-size", `${promo.imgSize}px` );
