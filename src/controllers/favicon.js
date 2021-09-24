@@ -1,3 +1,5 @@
+import { randomValueFromArray } from "$/utils";
+
 export default function favicon ( theme ) {
   const canvas = document.createElement( "canvas" );
   canvas.height = 64;
@@ -7,7 +9,11 @@ export default function favicon ( theme ) {
   ctx.fillStyle = theme.colors.siteBg; // bg color
   ctx.fillRect( 0, 0, canvas.width, canvas.height );
   ctx.font = "30px \"Hack\""; // hack font not working
-  ctx.fillStyle = theme.colors.htmlElement; // html element color
+  ctx.fillStyle = randomValueFromArray( [
+    theme.colors.htmlElement,
+    theme.colors.htmlAttribute,
+    theme.colors.htmlKey,
+  ] );
   ctx.fillText( "vk", 14, 44 );
 
   const link = document.createElement( "link" );

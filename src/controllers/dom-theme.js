@@ -1,4 +1,4 @@
-import { convertBlankSpaceToTrailingSpacesElement, randomValueFromArray, registerCssVar } from "$/utils";
+import { convertBlankSpaceToTrailingSpacesElement, randomValueFromArray, defineCssVar } from "$/utils";
 
 // ::
 const organizeDOM = () => {
@@ -80,7 +80,7 @@ const organizeDOM = () => {
 export function applyDomTheme ( theme ) {
   organizeDOM();
 
-  registerCssVar( [
+  defineCssVar( [
     {
       "name": "theme-plain-text",
       "value": theme.colors.plainText

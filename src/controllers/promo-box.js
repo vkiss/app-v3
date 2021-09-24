@@ -1,4 +1,4 @@
-import { convertBlankSpaceToTrailingSpacesElement, registerCssVar } from "$/utils";
+import { convertBlankSpaceToTrailingSpacesElement, defineCssVar } from "$/utils";
 import promos from "$/data/promos";
 
 // helper
@@ -48,10 +48,10 @@ export function createPromoBox ( promo, theme ) {
     </div>
   `;
 
-  registerCssVar( "promobox-header-color", `rgba(${hexToRgb( theme.colors.plainText ).r},${hexToRgb( theme.colors.plainText ).g},${hexToRgb( theme.colors.plainText ).b},.7)` );
+  defineCssVar( "promobox-header-color", `rgba(${hexToRgb( theme.colors.plainText ).r},${hexToRgb( theme.colors.plainText ).g},${hexToRgb( theme.colors.plainText ).b},.7)` );
 
   if ( promo.imgSize ) {
-    registerCssVar( "promobox-image-size", `${promo.imgSize}px` );
+    defineCssVar( "promobox-image-size", `${promo.imgSize}px` );
   }
 }
 
