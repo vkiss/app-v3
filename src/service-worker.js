@@ -7,8 +7,7 @@ var urlsToCache = [
   "/index.html",
   "/first-paint.css",
   "/style.css",
-  "/app.js",
-  "/app.js.map"
+  "/app.js"
 ];
 
 self.addEventListener( "install", function( event ) {

@@ -1,0 +1,11 @@
+{
+  "include": [
+    "*"
+  ],
+  "exclude": [
+    "first-paint.css",
+    "*.map"
+  ],
+  "deleteRemote": true,
+  "forcePasv": true
+}

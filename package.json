@@ -16,8 +16,7 @@
     "postbuild": "npm run ready:prod",
     "build:test": "serve ./dist",
     "ready:prod": "node app/readyForProduction",
-    "deploy": "npm run build && node app/deploy",
-    "deploy:hml": "npm run build && node app/deploy hml",
+    "deploy": "npm run build && simple-ftp-deploy",
     "prepare": "husky install",
     "precommit": "node app/updateGlobalVars && git add src/data/global-vars.js && lint-staged"
   },
@@ -38,10 +37,10 @@
     "@snowpack/plugin-sass": "^1.4.0",
     "chalk": "^4.1.2",
     "eslint": "^7.32.0",
-    "ftp-deploy": "^2.4.1",
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
     "serve": "^12.0.1",
+    "simple-ftp-deploy": "^1.0.0",
     "snowpack": "^3.8.8",
     "snowpack-plugin-raw-file-loader": "^1.0.9",
     "stylelint": "^13.13.1",
@@ -57,5 +56,8 @@
     "*.scss": [
       "stylelint --syntax scss --fix"
     ]
+  },
+  "ftp": {
+    "authFile": "../toolkit/deploy/vkiss.json"
   }
 }
