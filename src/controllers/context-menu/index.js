@@ -2,7 +2,7 @@
  * Imports
  */
 
-import { copyToClipboard, scanNodeDimension, isMobileDevice } from "../utils";
+import { copyToClipboard, scanNodeDimension, isMobileDevice } from "$/utils";
 
 // apps
 import startApp from "$/apps/trigger/start";
@@ -13,7 +13,6 @@ import closeApp from "$/apps/trigger/close";
 import telegramSuperior from "$/assets/logos/telegram.svg";
 // import logoXP from "$/assets/logos/xp.svg";
 import githubLogo from "$/assets/logos/github.svg";
-import npmLogo from "$/assets/logos/npm.svg";
 import chromeLogo from "$/assets/logos/chrome.svg";
 import parajegas from "$/assets/logos/parajegas.svg";
 import sophialis from "$/assets/logos/sophialis.svg";
@@ -27,39 +26,18 @@ import portfolioLogo from "$/assets/icons/code.svg";
 import copyIcon from "$/assets/icons/copy.svg";
 import closeIcon from "$/assets/icons/close.svg";
 
+// atoms
+import npmPackages from "./atoms/npmPackages";
+
 /**
- * Data
- */
+  * Data
+  */
 
 const CONTEXTMENU = document.createElement( "DIV" );
 CONTEXTMENU.className = "context-menu";
 
 const contextMenuItens = [
-  {
-    "icon": npmLogo,
-    "title": "packages",
-    "icon_adjust": 2,
-    "itens": [
-      {
-        "icon": npmLogo,
-        "icon_adjust": 2,
-        "label": "clear-path",
-        "link": "https://www.npmjs.com/package/clear-path"
-      },
-      {
-        "icon": npmLogo,
-        "icon_adjust": 2,
-        "label": "simple-webp-converter",
-        "link": "https://www.npmjs.com/package/simple-webp-converter"
-      },
-      {
-        "icon": npmLogo,
-        "icon_adjust": 2,
-        "label": "vh-watch",
-        "link": "https://www.npmjs.com/package/vh-watch"
-      }
-    ]
-  },
+  npmPackages,
   {
     "icon": portfolioLogo,
     "icon_adjust": 3,
@@ -146,8 +124,8 @@ const adjustIconPadding = ( ICONCONTAINER, DATA ) => {
 };
 
 /**
- * Append Menu
- */
+  * Append Menu
+  */
 
 const createContextMenu = ( menuData = contextMenuItens ) => {
   CONTEXTMENU.innerHTML = "";
