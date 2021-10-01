@@ -6,7 +6,10 @@ import { scanNodeDimension, isMobileDevice } from "$/utils";
 
 // actions
 import closeMenu from "$/controllers/context-menu/actions/close";
-import resolveMenuTemplate from "./functions/templateManager";
+
+// functions
+import getMenuGreatestHeight from "$/controllers/context-menu/functions/getMenuGreatestHeight";
+import resolveMenuTemplate from "$/controllers/context-menu/functions/templateManager";
 
 /**
   * Init
@@ -15,7 +18,7 @@ import resolveMenuTemplate from "./functions/templateManager";
 const CONTEXTMENU = document.createElement( "DIV" );
 CONTEXTMENU.className = "context-menu";
 
-export default function contextMenuController ( randomPromo ) {
+export default randomPromo => {
   if ( isMobileDevice() ) { return; }
 
   document.body.appendChild( CONTEXTMENU );
@@ -30,33 +33,12 @@ export default function contextMenuController ( randomPromo ) {
 
     resolveMenuTemplate( event, randomPromo );
 
-    // Calculate Max Context Menu Size (including sub itens)
-    const allItensWithSubItens = CONTEXTMENU.querySelectorAll( ".context-menu-primary-item" );
-
-    let childrenRecord = 0;
-    let childrenRecordIndex = 0;
-
-    for ( let i = 0; i < allItensWithSubItens.length ; i++ ) {
-      if ( allItensWithSubItens[i].querySelector( ".context-menu-sub-menu" ) !== null ) {
-        const noOfChildren = allItensWithSubItens[i].querySelector( ".context-menu-sub-menu" ).children.length;
-
-        if ( noOfChildren > childrenRecord ) {
-          childrenRecord = noOfChildren;
-          childrenRecordIndex = i + 1;
-        }
-      }
-    }
-
-    const eachItemHeight = 27;
-
-    const greatestHeight = 6 + ( eachItemHeight * childrenRecord + eachItemHeight * childrenRecordIndex );
-
     if ( event.button == 2 ) {
       // Posicionamento do menu
       CONTEXTMENU.removeAttribute( "style" );
       CONTEXTMENU.classList.toggle( "--display" );
 
-      const scanResult = scanNodeDimension( event, CONTEXTMENU, greatestHeight );
+      const scanResult = scanNodeDimension( event, CONTEXTMENU, getMenuGreatestHeight() );
 
       CONTEXTMENU.style.left = scanResult.left + "px";
       CONTEXTMENU.style.top = scanResult.top + "px";
@@ -78,4 +60,4 @@ export default function contextMenuController ( randomPromo ) {
       document.body.classList.remove( "--context-menu-open" );
     }
   } );
-}
+};

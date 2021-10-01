@@ -14,7 +14,7 @@ import contextMenu from "$/controllers/context-menu";
 import favicon from "$/controllers/favicon.js";
 
 // data
-import themes from "./data/themes";
+import themes from "$/data/themes";
 
 /**
  * Functions
