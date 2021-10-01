@@ -36,11 +36,9 @@ const init = () => {
   initAndWatchVh();
 
   if ( "serviceWorker" in navigator ) {
-    window.addEventListener( "load", function() {
-      navigator.serviceWorker
-        .register( "/service-worker.js" )
-        .then( res => console.log( "service worker registered" ) )
-        .catch( err => console.log( "service worker not registered", err ) );
+    // Use the window load event to keep the page load performant
+    window.addEventListener( "load", () => {
+      navigator.serviceWorker.register( "/service-worker.js" );
     } );
   }
 };

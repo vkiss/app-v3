@@ -3,14 +3,15 @@
   "name": "Vkiss",
   "icons": [
     {
-      "src": "/favicon.png",
+      "src": "icons/manifest-icon-192.png",
+      "sizes": "192x192",
       "type": "image/png",
-      "sizes": "192x192"
+      "purpose": "maskable any"
     },
     {
-      "src": "/favicon.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "icons/manifest-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
   "start_url": "/?source=pwa",
@@ -18,14 +19,5 @@
   "display": "fullscreen",
   "scope": "/",
   "theme_color": "#E5446F",
-  "shortcuts": [
-    {
-      "name": "Testefullname",
-      "short_name": "Testesn",
-      "description": "Descrição do teste",
-      "url": "/?source=pwa&teste=true",
-      "icons": [{ "src": "/favicon.png", "sizes": "192x192" }]
-    }
-  ],
   "description": "Aplicativo pessoal"
 }
