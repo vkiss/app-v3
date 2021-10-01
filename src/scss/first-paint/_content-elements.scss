@@ -1,3 +1,11 @@
+#main-app {
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  flex-direction: column;
+}
+
 h1 {
   font-size: remy(18);
   text-transform: uppercase;
@@ -24,7 +32,7 @@ button {
   @extend %prevent-doubletap-zoom;
 }
 
-#main-app {
+#hero {
   @include main-app-container;
   @include main-app-element-controller;
 

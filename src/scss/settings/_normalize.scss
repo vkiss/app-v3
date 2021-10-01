@@ -34,21 +34,12 @@ nav,
 section { display: block; }
 
 /**
-  1. 100vh solution to eliminate mobile discrepancy (with fallback)
-    - based on this article: https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
-    - implemented using vh-watch (https://www.npmjs.com/package/vh-watch)
-  2. content xy center alignment
-  3. prevents unwanted scroll
-  4. reset browser default
+  1. reset browser default
  */
 
 body {
-  display: flex; /* 2 */
-  overflow: hidden; /* 3 */
-  height: 100vh; /* 1 */
-  height: calc(var(--vh, 1vh) * 100); /* 1 */
-  flex-direction: column; /* 2 */
-  margin: 0; /* 4 */
+  display: block;
+  margin: 0; /* 1 */
   font-family: $hack-font;
 }
 

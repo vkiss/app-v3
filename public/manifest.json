@@ -15,9 +15,9 @@
     }
   ],
   "start_url": "/?source=pwa",
-  "background_color": "#E5446F",
+  "background_color": "#282C35",
   "display": "fullscreen",
   "scope": "/",
-  "theme_color": "#E5446F",
+  "theme_color": "#282C35",
   "description": "Aplicativo pessoal"
 }
