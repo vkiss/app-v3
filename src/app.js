@@ -13,6 +13,10 @@ import { mouseTooltipController } from "$/controllers/mouse-tooltip";
 import contextMenu from "$/controllers/context-menu";
 import favicon from "$/controllers/favicon.js";
 
+import { generatePixelSvg } from "$icon-editor";
+
+import { iTest } from "$/assets/icons";
+
 // data
 import themes from "$/data/themes";
 
@@ -34,6 +38,11 @@ const init = () => {
   contextMenu( promo );
   mouseTooltipController();
   initAndWatchVh();
+
+  const testsvg = generatePixelSvg( iTest );
+  console.log( typeof( testsvg ) );
+  console.log( testsvg );
+  document.body.appendChild( testsvg );
 
   if ( "serviceWorker" in navigator ) {
     // Use the window load event to keep the page load performant

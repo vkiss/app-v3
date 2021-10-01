@@ -1,8 +1,8 @@
 // services
-import getCanvasSize from "../services/getCanvasSize";
+import getCanvasSize from "$icon-editor/services/getCanvasSize";
 
 // components
-import editorTile from "../components/canvasEditor/tile";
+import editorTile from "$icon-editor/components/canvasEditor/tile";
 
 export default function updateCanvas ( canvasElement = document.querySelector( ".pixel-editor__canvas" ) ) {
   canvasElement.innerHTML = "";

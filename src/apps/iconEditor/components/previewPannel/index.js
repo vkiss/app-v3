@@ -1,9 +1,9 @@
 // controllers
-import generateSvg from "../../controllers/svgGenerator";
+import generateSvg from "$icon-editor/controllers/svgGenerator";
 
 // services
-import getCanvasSize from "../../services/getCanvasSize";
-import generateASCIICode from "../../services/generateASCIICode";
+import getCanvasSize from "$icon-editor/services/getCanvasSize";
+import generateASCIICode from "$icon-editor/services/generateASCIICode";
 
 // assets
 import copyIcon from "$/assets/icons/copy.svg";

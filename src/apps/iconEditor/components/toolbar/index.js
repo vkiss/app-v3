@@ -1,9 +1,20 @@
-import updateCanvas from "../../controllers/canvasController";
+// controllers
+import updateCanvas from "$icon-editor/controllers/canvasController";
+import { generatePixelSvg } from "$icon-editor";
+
+// services
+import translateASCIICode from "$icon-editor/services/translateASCIICode";
+import colorByMap from "$icon-editor/services/colorByMap";
+import updateSvgPreview from "$icon-editor/services/updateSvgPreview";
+
+// assets
+import { IPencil } from "$icon-editor/assets/icons";
 
 const TOOLBAR_TOOLS = [
   {
     "name": "tool: pen",
     "tool": "pen",
+    "icon": IPencil,
   },
   // {
   //   "name": "tool: mirror-pen",
@@ -84,11 +95,24 @@ const TOOLBAR_TOOLS = [
       loadTextArea.addEventListener( "keyup", ( loadEvent ) => {
         if( loadEvent.code === "Enter" ) {
           event.preventDefault();
-          console.log( "load file function" );
-          // TODO: Implementar função de load de svg
+
+          const sheetCheat = translateASCIICode( loadEvent.target.value );
+
+          if ( sheetCheat ) {
+            sessionStorage.setItem( "pixelEditor_config_x", sheetCheat.width );
+            sessionStorage.setItem( "pixelEditor_config_y", sheetCheat.height );
+            updateCanvas();
+            colorByMap( loadEvent.target.value );
+
+            updateSvgPreview();
+          } else {
+            // TODO: Display de erro
+            console.error( "O código da imagem não é válido." );
+          }
+
           toolButton.innerHTML = "";
           toolButton.appendChild( document.createTextNode( "open work" ) );
-        };
+        }
       } );
 
       configContainer.appendChild( loadTextArea );
@@ -123,7 +147,7 @@ export default function toolbar () {
       toolButton.setAttribute( "role", "button" );
       toolButton.toolName = tool.tool;
       toolButton.action = tool.action;
-      toolButton.appendChild( document.createTextNode( tool.name ) );
+      toolButton.appendChild( tool.icon ? generatePixelSvg( tool.icon ) : document.createTextNode( tool.name ) );
       container.appendChild( toolButton );
     }
   }

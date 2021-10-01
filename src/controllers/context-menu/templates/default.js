@@ -6,7 +6,7 @@ import chromePlugins from "$/controllers/context-menu/content/chrome-plugins";
 import divider from "$/controllers/context-menu/content/divider";
 
 import labIcon from "$/assets/icons/lab.svg";
-import pixelEditor from "$/apps/pixelEditor";
+import iconEditor from "$/apps/iconEditor";
 
 export default [
   npmPackages,
@@ -20,8 +20,8 @@ export default [
     "sort": "abc",
     "itens": [
       {
-        "label": "icon-editor.js",
-        "app": pixelEditor
+        "label": "jicon",
+        "app": iconEditor
       },
     ]
   },

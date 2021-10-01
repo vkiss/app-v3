@@ -12,7 +12,8 @@ module.exports = {
     public: "/",
   },
   alias: {
-    "$": "./src/"
+    "$": "./src/",
+    "$icon-editor": "./src/apps/iconEditor",
   },
   plugins: [
     [

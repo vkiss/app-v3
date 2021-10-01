@@ -5,6 +5,7 @@
 import { copyToClipboard } from "$/utils";
 
 import startApp from "$/apps/trigger/start";
+import closeApp from "$/apps/trigger/close";
 import linkBlank from "$/assets/icons/external-link.svg";
 
 // templates

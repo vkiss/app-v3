@@ -31,6 +31,7 @@ export default ( event, randomPromo ) => {
     if ( document.body.classList.contains( "--run-on-bg-finish" ) ) {
       createContextMenu( [
         {
+          "type": "app",
           "icon": closeIcon,
           "iconAdjust": 2,
           "title": "fechar aplicativo",

@@ -1,5 +1,33 @@
 @import "../../scss/toolkit";
 
+%interface-button {
+  $drop-shadow-color: #D2D2D2;
+  $drop-light-color: #FFF;
+
+  border: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-top-color: $drop-light-color !important;
+  border-right-color: $drop-shadow-color !important;
+  border-bottom-color: $drop-shadow-color !important;
+  border-left-color: $drop-light-color !important;
+  background-color: #ECECEC;
+  box-shadow: none !important;
+  outline: 0;
+
+  &:focus {
+    z-index: 1;
+    background-color: #EAEAEA;
+  }
+
+  &:active {
+    border-top-color: $drop-shadow-color !important;
+    border-right-color: $drop-light-color !important;
+    border-bottom-color: $drop-light-color !important;
+    border-left-color: $drop-shadow-color !important;
+  }
+}
+
 .pixel-editor {
   @include second-app-container-shared-config;
 
@@ -19,6 +47,12 @@
     button {
       flex: 1;
       flex-basis: 100%;
+    }
+
+    [role="button"] { // toolbar buttons
+      @extend %interface-button;
+
+      color: #000;
     }
   }
 
