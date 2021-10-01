@@ -27,7 +27,7 @@ const transformPackageListToContextMenu = ( packageArray ) => {
   for ( const packageItem of packageArray ) {
     contextMenuArray.push( {
       "icon": npmLogo,
-      "icon_adjust": iconAdjust,
+      "iconAdjust": iconAdjust,
       "label": packageItem.title,
       "link": packageItem.link
     } );
@@ -39,7 +39,7 @@ const transformPackageListToContextMenu = ( packageArray ) => {
 export default {
   "icon": npmLogo,
   "title": "packages",
-  "icon_adjust": iconAdjust,
+  "iconAdjust": iconAdjust,
   "sort": "abc",
   "itens": transformPackageListToContextMenu( packageList )
 };

@@ -18,7 +18,7 @@ export default [
     "name": "mayukai reversal",
     "link": "https://github.com/GulajavaMinistudio/Mayukai-Theme",
     "colors": {
-      "brackets": "##B3B1AC",
+      "brackets": "#B3B1AC",
       "htmlElement": "#F41985",
       "htmlAttribute": "#AEE96E",
       "htmlEqualSign": "#939696",
