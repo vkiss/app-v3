@@ -2,7 +2,7 @@
 import { initAndWatchVh } from "vh-watch";
 
 // utils
-import { randomIntFromInterval } from "$/utils";
+import { isPwa, randomIntFromInterval } from "$/utils";
 
 // controllers
 import { consoleController } from "$/controllers/console";
@@ -40,6 +40,11 @@ const init = () => {
     window.addEventListener( "load", () => {
       navigator.serviceWorker.register( "/service-worker.js" );
     } );
+  }
+
+  // draft
+  if ( isPwa() ) {
+    // document.getElementById( "main-app" ).innerHTML = "";
   }
 };
 
