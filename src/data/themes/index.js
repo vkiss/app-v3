@@ -2,6 +2,7 @@ import dracula from "./dracula";
 import fireflyPro from "./fireflyPro";
 import firefoxTheme from "./firefoxTheme";
 import horizon from "./horizon";
+import laserWave from "./laserWave";
 import mayukai from "./mayukai";
 import monokaiPro from "./monokaiPro";
 import nightOwl from "./nightOwl";
@@ -14,6 +15,7 @@ export default [
   fireflyPro,
   firefoxTheme,
   horizon,
+  laserWave,
   ...mayukai,
   monokaiPro,
   nightOwl,
