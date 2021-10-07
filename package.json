@@ -33,7 +33,7 @@
     "vh-watch": "^1.0.1"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.15.7",
+    "@babel/eslint-parser": "^7.15.8",
     "@snowpack/plugin-sass": "^1.4.0",
     "chalk": "^4.1.2",
     "eslint": "^7.32.0",
