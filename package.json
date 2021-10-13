@@ -1,7 +1,7 @@
 {
   "name": "vkiss",
   "version": "3.9.10",
-  "description": "",
+  "description": "personal application",
   "main": "index.js",
   "author": {
     "name": "Vinicius Kiss",
@@ -36,7 +36,7 @@
     "@babel/eslint-parser": "^7.15.8",
     "@snowpack/plugin-sass": "^1.4.0",
     "chalk": "^4.1.2",
-    "eslint": "^7.32.0",
+    "eslint": "^8.0.1",
     "husky": "^7.0.2",
     "lint-staged": "^11.2.3",
     "serve": "^12.0.1",
