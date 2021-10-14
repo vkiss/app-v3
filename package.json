@@ -11,10 +11,11 @@
   "scripts": {
     "prestart": "node app/updateGlobalVars",
     "start": "snowpack dev",
-    "prebuild": "node app/updateGlobalVars",
+    "prebuild": "npm run clear && node app/updateGlobalVars",
     "build": "snowpack build",
     "postbuild": "npm run ready:prod",
     "build:test": "serve ./dist",
+    "clear": "clear-path",
     "ready:prod": "node app/readyForProduction",
     "deploy": "npm run build && simple-ftp-deploy",
     "prepare": "husky install",
@@ -36,6 +37,7 @@
     "@babel/eslint-parser": "^7.15.8",
     "@snowpack/plugin-sass": "^1.4.0",
     "chalk": "^4.1.2",
+    "clear-path": "^1.2.1",
     "eslint": "^8.0.1",
     "husky": "^7.0.2",
     "lint-staged": "^11.2.3",
@@ -58,6 +60,7 @@
     ]
   },
   "babel": {},
+  "clearpath": "dist",
   "ftp": {
     "authFile": "../toolkit/deploy/vkiss.json"
   }
