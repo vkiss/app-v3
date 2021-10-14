@@ -58,7 +58,7 @@ export function createFooterNotes ( selectedColorPallete ) {
     return `${major}.${minor}${ patch === "0" ? "" : "." + patch }`;
   };
 
-  const versionText = `v${filterVersion( globalVars.packageVersion )}${globalVars.versionSufix}`;
+  const versionText = `v${filterVersion( globalVars.packageVersion )}`;
 
   newFooterNote( `${versionText}#|#<a target="_blank" rel="noopener noreferrer" href="https://github.com/vkiss/app">código#fonte</a>` );
 

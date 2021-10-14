@@ -1,6 +1,6 @@
 {
   "name": "vkiss",
-  "version": "3.9.10",
+  "version": "3.9.10-pwa.beta.2",
   "description": "personal application",
   "main": "index.js",
   "author": {
@@ -11,15 +11,16 @@
   "scripts": {
     "prestart": "node app/updateGlobalVars",
     "start": "snowpack dev",
-    "prebuild": "npm run clear && node app/updateGlobalVars",
+    "prebuild": "npm run clear && node app/updateGlobalVars && node app/updateSwCache",
     "build": "snowpack build",
-    "postbuild": "npm run ready:prod",
+    "postbuild": "npm run sw && npm run ready:prod",
     "build:test": "serve ./dist",
     "clear": "clear-path",
     "ready:prod": "node app/readyForProduction",
     "deploy": "npm run build && simple-ftp-deploy",
     "prepare": "husky install",
-    "precommit": "node app/updateGlobalVars && git add src/data/global-vars.js && lint-staged"
+    "precommit": "node app/updateGlobalVars && git add src/data/global-vars.js && lint-staged",
+    "sw": "./node_modules/.bin/babel src/service-worker.js -d dist"
   },
   "homepage": "https://github.com/vkiss/root#readme",
   "repository": {
@@ -34,8 +35,11 @@
     "vh-watch": "^1.0.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.15.7",
     "@babel/eslint-parser": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
     "@snowpack/plugin-sass": "^1.4.0",
+    "babel-preset-minify": "^0.5.1",
     "chalk": "^4.1.2",
     "clear-path": "^1.2.1",
     "eslint": "^8.0.1",
@@ -59,7 +63,17 @@
       "stylelint --syntax scss --fix"
     ]
   },
-  "babel": {},
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "minify"
+    ],
+    "targets": {
+      "chrome": "58",
+      "ie": "9"
+    },
+    "comments": false
+  },
   "clearpath": "dist",
   "ftp": {
     "authFile": "../toolkit/deploy/vkiss.json"

@@ -13,6 +13,9 @@ import { mouseTooltipController } from "$/controllers/mouse-tooltip";
 import contextMenu from "$/controllers/context-menu";
 import favicon from "$/controllers/favicon.js";
 
+// pwa template
+import pwa from "$/pwa";
+
 // data
 import themes from "$/data/themes";
 
@@ -44,7 +47,9 @@ const init = () => {
 
   // draft
   if ( isPwa() ) {
-    // document.getElementById( "main-app" ).innerHTML = "";
+    const mainApp = document.getElementById( "main-app" );
+    mainApp.innerHTML = "";
+    mainApp.appendChild( pwa() );
   }
 };
 

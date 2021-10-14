@@ -14,6 +14,21 @@
       "type": "image/png"
     }
   ],
+  "shortcuts": [
+    {
+      "name": "Shortcut name to show in the menu",
+      "description": "A description of what the shortcut does",
+      "url": "Link to shortcut",
+      "icons": [
+        {
+          "src": "icons/manifest-icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "any"
+        }
+      ]
+    }
+  ],
   "start_url": "/?source=pwa",
   "background_color": "#282C35",
   "display": "fullscreen",
