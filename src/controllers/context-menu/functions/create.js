@@ -26,6 +26,8 @@ export default ( menuData = defaultMenu ) => {
   const CONTEXTMENU = getContextMenu();
   CONTEXTMENU.innerHTML = "";
 
+  console.log( menuData );
+
   for ( const menuItem of menuData ) {
     const item = document.createElement( menuItem.link ? "A" : "DIV" );
 

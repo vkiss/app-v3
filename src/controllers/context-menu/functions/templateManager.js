@@ -26,7 +26,7 @@ export default ( event, randomPromo ) => {
       }
     ] );
   } else if ( event.target.nodeName === "A" ) {
-    createContextMenu( regularLinkMenu( event.target.getAttribute( "href" ) ) );
+    createContextMenu( regularLinkMenu( event.target.href ) );
   } else {
     if ( document.body.classList.contains( "--run-on-bg-finish" ) ) {
       createContextMenu( [

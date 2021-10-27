@@ -21,6 +21,6 @@ export default [
     "iconAdjust": 3,
     "title": "exibir código fonte",
     "type": "link",
-    "link": "https://github.com/vkiss/root"
+    "link": "https://github.com/vkiss/app"
   }
 ];

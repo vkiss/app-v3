@@ -8,7 +8,8 @@ export default [
     "icon": emailIcon,
     "iconAdjust": 2,
     "title": "escrever um e-mail",
-    "link": document.getElementById( "email-link-desktop" ).getAttribute( "href" )
+    "type": "link",
+    "link": document.getElementById( "email-link-desktop" ).href
   },
   // {
   //   "icon": logoXP,
@@ -18,6 +19,7 @@ export default [
   divider,
   {
     "icon": copyIcon,
+    "type": "copy",
     "iconAdjust": 2,
     "title": "copiar endereço de e-mail",
     "copy": "contato@vkiss.com.br"
