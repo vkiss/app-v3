@@ -38,25 +38,27 @@
     "@snowpack/plugin-sass": "^1.4.0",
     "chalk": "^4.1.2",
     "clear-path": "^1.2.1",
-    "eslint": "^8.0.1",
-    "husky": "^7.0.2",
-    "lint-staged": "^11.2.3",
+    "eslint": "^8.1.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.6",
+    "postcss": "^8.3.11",
+    "postcss-scss": "^4.0.1",
     "serve": "^12.0.1",
     "simple-ftp-deploy": "^1.0.0",
     "snowpack": "^3.8.8",
     "snowpack-plugin-raw-file-loader": "^1.0.9",
-    "stylelint": "^13.13.1",
+    "stylelint": "^14.0.1",
     "stylelint-config-idiomatic-order": "^8.1.0",
-    "stylelint-config-standard": "^22.0.0",
-    "stylelint-order": "^4.1.0",
-    "stylelint-scss": "^3.21.0"
+    "stylelint-config-standard": "^23.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-scss": "^4.0.0"
   },
   "lint-staged": {
     "*.js": [
       "eslint --fix"
     ],
     "*.scss": [
-      "stylelint --syntax scss --fix"
+      "stylelint --fix"
     ]
   },
   "babel": {},
