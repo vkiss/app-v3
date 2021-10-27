@@ -29,7 +29,8 @@ fs.readFile( globalVarsFile, "utf8", function ( err,data ) {
     return info( chalk.red( err ) );
   }
 
-  const result = data.replace( /^( |)*\"packageVersion\"\: \"(\d).(\d).(\d).\,/m, `  "packageVersion": "${packageFile.version}",` );
+  const result = data.replace( /^( |)*\"packageVersion\"\: \"(\d).(\d).(\d).\"\,/m, `  "packageVersion": "${packageFile.version}",` );
+
   info( chalk.gray( "# src/data/global-vars.js" ) );
   info( chalk.gray( "{" ) );
   info( chalk.gray( "  ..." ) );
