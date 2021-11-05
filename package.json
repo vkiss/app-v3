@@ -14,7 +14,6 @@
     "prebuild": "npm run clear && node app/updateGlobalVars",
     "build": "snowpack build",
     "postbuild": "npm run ready:prod",
-    "build:test": "serve ./dist",
     "clear": "clear-path",
     "ready:prod": "node app/readyForProduction",
     "deploy": "npm run build && simple-ftp-deploy",
@@ -34,7 +33,7 @@
     "vh-watch": "^1.0.1"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.15.8",
+    "@babel/eslint-parser": "^7.16.0",
     "@snowpack/plugin-sass": "^1.4.0",
     "chalk": "^4.1.2",
     "clear-path": "^1.2.1",
@@ -42,9 +41,8 @@
     "husky": "^7.0.4",
     "lint-staged": "^11.2.6",
     "postcss": "^8.3.11",
-    "postcss-scss": "^4.0.1",
-    "serve": "^12.0.1",
-    "simple-ftp-deploy": "^1.0.0",
+    "postcss-scss": "^4.0.2",
+    "simple-ftp-deploy": "^1.0.1",
     "snowpack": "^3.8.8",
     "snowpack-plugin-raw-file-loader": "^1.0.9",
     "stylelint": "^14.0.1",
